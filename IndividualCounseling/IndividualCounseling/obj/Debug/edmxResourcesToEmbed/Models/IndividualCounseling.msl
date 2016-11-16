@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IndividualCounselingModelStoreContainer" CdmEntityContainer="IndividualCounselingEntities">
+    <EntitySetMapping Name="Area_Table">
+      <EntityTypeMapping TypeName="IndividualCounselingModel.Area_Table">
+        <MappingFragment StoreEntitySet="Area_Table">
+          <ScalarProperty Name="GovernorateID" ColumnName="GovernorateID" />
+          <ScalarProperty Name="AreaEnName" ColumnName="AreaEnName" />
+          <ScalarProperty Name="AreaArName" ColumnName="AreaArName" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Table">
+      <EntityTypeMapping TypeName="IndividualCounselingModel.Case_Table">
+        <MappingFragment StoreEntitySet="Case_Table">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+          <ScalarProperty Name="Disorder_Resuscitatesexual" ColumnName="Disorder_Resuscitatesexual" />
+          <ScalarProperty Name="Disorder_rape" ColumnName="Disorder_rape" />
+          <ScalarProperty Name="Disorder_SexualHarassment" ColumnName="Disorder_SexualHarassment" />
+          <ScalarProperty Name="Disorder_Maltreatment" ColumnName="Disorder_Maltreatment" />
+          <ScalarProperty Name="Disorder_PositionsShocking" ColumnName="Disorder_PositionsShocking" />
+          <ScalarProperty Name="Disorder_Sleep" ColumnName="Disorder_Sleep" />
+          <ScalarProperty Name="Disorder_Urination" ColumnName="Disorder_Urination" />
+          <ScalarProperty Name="Disorder_Pronounce" ColumnName="Disorder_Pronounce" />
+          <ScalarProperty Name="Disorder_Learn" ColumnName="Disorder_Learn" />
+          <ScalarProperty Name="Disorder_Psychological" ColumnName="Disorder_Psychological" />
+          <ScalarProperty Name="Disorder_Behavioural" ColumnName="Disorder_Behavioural" />
+          <ScalarProperty Name="TimeBehavior" ColumnName="TimeBehavior" />
+          <ScalarProperty Name="foreman_For_behavior" ColumnName="foreman_For_behavior" />
+          <ScalarProperty Name="RepeatBehavior" ColumnName="RepeatBehavior" />
+          <ScalarProperty Name="undesirable_Behavior" ColumnName="undesirable_Behavior" />
+          <ScalarProperty Name="IncidentDescription" ColumnName="IncidentDescription" />
+          <ScalarProperty Name="intimation_Friend" ColumnName="intimation_Friend" />
+          <ScalarProperty Name="intimation_School" ColumnName="intimation_School" />
+          <ScalarProperty Name="intimation_Corporation" ColumnName="intimation_Corporation" />
+          <ScalarProperty Name="intimation_Police" ColumnName="intimation_Police" />
+          <ScalarProperty Name="intimation_Parents" ColumnName="intimation_Parents" />
+          <ScalarProperty Name="Effects_Burns" ColumnName="Effects_Burns" />
+          <ScalarProperty Name="Effects_Distortion" ColumnName="Effects_Distortion" />
+          <ScalarProperty Name="Effects_Bruising" ColumnName="Effects_Bruising" />
+          <ScalarProperty Name="Effects_Wounds" ColumnName="Effects_Wounds" />
+          <ScalarProperty Name="Effects_break" ColumnName="Effects_break" />
+          <ScalarProperty Name="CenterName" ColumnName="CenterName" />
+          <ScalarProperty Name="ChildConvertingFoundation" ColumnName="ChildConvertingFoundation" />
+          <ScalarProperty Name="AssaultLevePain" ColumnName="AssaultLevePain" />
+          <ScalarProperty Name="AssaultRepeatAttack" ColumnName="AssaultRepeatAttack" />
+          <ScalarProperty Name="AssaultReport" ColumnName="AssaultReport" />
+          <ScalarProperty Name="AssaultPlace" ColumnName="AssaultPlace" />
+          <ScalarProperty Name="AssaultDate" ColumnName="AssaultDate" />
+          <ScalarProperty Name="AssaultKidnapping" ColumnName="AssaultKidnapping" />
+          <ScalarProperty Name="AssaultExploit" ColumnName="AssaultExploit" />
+          <ScalarProperty Name="AssaultSpy" ColumnName="AssaultSpy" />
+          <ScalarProperty Name="AssaultNeglecting" ColumnName="AssaultNeglecting" />
+          <ScalarProperty Name="AssaultVerbal" ColumnName="AssaultVerbal" />
+          <ScalarProperty Name="AssaultSexual" ColumnName="AssaultSexual" />
+          <ScalarProperty Name="AssaultPhysical" ColumnName="AssaultPhysical" />
+          <ScalarProperty Name="AssailanGender" ColumnName="AssailanGender" />
+          <ScalarProperty Name="AssailanKinship" ColumnName="AssailanKinship" />
+          <ScalarProperty Name="AssailantName" ColumnName="AssailantName" />
+          <ScalarProperty Name="KnownAssailant" ColumnName="KnownAssailant" />
+          <ScalarProperty Name="CasesAssault" ColumnName="CasesAssault" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+          <ScalarProperty Name="EducationalLevel" ColumnName="EducationalLevel" />
+          <ScalarProperty Name="ChildStudy" ColumnName="ChildStudy" />
+          <ScalarProperty Name="CasesAdress" ColumnName="CasesAdress" />
+          <ScalarProperty Name="AreasRating" ColumnName="AreasRating" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="GovernorateID" ColumnName="GovernorateID" />
+          <ScalarProperty Name="ChildLivesWith" ColumnName="ChildLivesWith" />
+          <ScalarProperty Name="Childlives" ColumnName="Childlives" />
+          <ScalarProperty Name="CasesSorted" ColumnName="CasesSorted" />
+          <ScalarProperty Name="FemalNumber" ColumnName="FemalNumber" />
+          <ScalarProperty Name="MaleNumber" ColumnName="MaleNumber" />
+          <ScalarProperty Name="BrothersNumber" ColumnName="BrothersNumber" />
+          <ScalarProperty Name="CasesMobile" ColumnName="CasesMobile" />
+          <ScalarProperty Name="EconomicLevel" ColumnName="EconomicLevel" />
+          <ScalarProperty Name="ParentsRelationship" ColumnName="ParentsRelationship" />
+          <ScalarProperty Name="ParentalStatus" ColumnName="ParentalStatus" />
+          <ScalarProperty Name="MotherWork" ColumnName="MotherWork" />
+          <ScalarProperty Name="FatherWork" ColumnName="FatherWork" />
+          <ScalarProperty Name="StudyMother" ColumnName="StudyMother" />
+          <ScalarProperty Name="StudyFather" ColumnName="StudyFather" />
+          <ScalarProperty Name="CasesCitizen" ColumnName="CasesCitizen" />
+          <ScalarProperty Name="CasesAge" ColumnName="CasesAge" />
+          <ScalarProperty Name="CasesGender" ColumnName="CasesGender" />
+          <ScalarProperty Name="CasesName" ColumnName="CasesName" />
+          <ScalarProperty Name="CasesStatus" ColumnName="CasesStatus" />
+          <ScalarProperty Name="CasesDate" ColumnName="CasesDate" />
+          <ScalarProperty Name="CasesNumber" ColumnName="CasesNumber" />
+          <ScalarProperty Name="CasesID" ColumnName="CasesID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Governorate_Table">
+      <EntityTypeMapping TypeName="IndividualCounselingModel.Governorate_Table">
+        <MappingFragment StoreEntitySet="Governorate_Table">
+          <ScalarProperty Name="GovernorateArName" ColumnName="GovernorateArName" />
+          <ScalarProperty Name="GovernorateID" ColumnName="GovernorateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectControl_Table">
+      <EntityTypeMapping TypeName="IndividualCounselingModel.ProjectControl_Table">
+        <MappingFragment StoreEntitySet="ProjectControl_Table">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ProjectControlID" ColumnName="ProjectControlID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectTable">
+      <EntityTypeMapping TypeName="IndividualCounselingModel.ProjectTable">
+        <MappingFragment StoreEntitySet="ProjectTable">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Session_Table">
+      <EntityTypeMapping TypeName="IndividualCounselingModel.Session_Table">
+        <MappingFragment StoreEntitySet="Session_Table">
+          <ScalarProperty Name="CaseID" ColumnName="CaseID" />
+          <ScalarProperty Name="sessionRecommendations" ColumnName="sessionRecommendations" />
+          <ScalarProperty Name="sessionResult" ColumnName="sessionResult" />
+          <ScalarProperty Name="sessionDate" ColumnName="sessionDate" />
+          <ScalarProperty Name="sessionID" ColumnName="sessionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_Table">
+      <EntityTypeMapping TypeName="IndividualCounselingModel.Users_Table">
+        <MappingFragment StoreEntitySet="Users_Table">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

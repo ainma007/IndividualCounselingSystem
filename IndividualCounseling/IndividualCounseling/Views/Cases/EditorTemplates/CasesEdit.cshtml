@@ -1,0 +1,938 @@
+﻿@model IndividualCounseling.Models.Cases.CasesViewModel
+<style type="text/css">
+    div.k-edit-form-container {
+        width: 100%;
+    }
+
+        div.k-edit-form-container div.editor-field textarea, input.k-textbox {
+            width: 100%;
+            max-width: none;
+        }
+
+
+</style>
+
+
+
+<div class="k-edit-form-container" style="margin:auto;">
+    <div class="grid-title">
+        <h3 class="alert alert-warning">بيانات الملف</h3>
+    </div>
+    <table class="table table-bordered no-more-tables">
+        <tbody>
+            <tr>
+                <td colspan="1" class="alert alert-info"><h4>رقم الحالة</h4></td>
+                <td colspan="1">@Html.EditorFor(model => model.CasesNumber)@Html.ValidationMessageFor(model => model.CasesNumber)</td>
+                <td colspan="2" class="alert alert-info"><h4>االتاريخ</h4></td>
+                <td colspan="2"> @Html.Kendo().DatePickerFor(model => model.CasesDate) @Html.ValidationMessageFor(model => model.CasesDate)</td>
+           
+                <td colspan="1" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesStatus)</h4></td>
+                <td colspan="1">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.CasesStatus)
+          .Name("CasesStatus")
+          .BindTo(new List<string>() {
+              "جديدة",
+              "متابعة",
+               "متوقفة",
+                "محولة",
+
+
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.CasesStatus)
+                    </span>
+                </td>
+
+         
+            </tr>
+        </tbody>
+
+    </table>
+
+
+    <div class="grid-title">
+        <h3 class="alert alert-warning">البيانات الاساسية</h3>
+    </div>
+    <table class="table table-bordered no-more-tables">
+        <tbody>
+            <tr>
+                <td colspan="3" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesName)</h4></td>
+                <td colspan="5">@Html.EditorFor(model => model.CasesName)@Html.ValidationMessageFor(model => model.CasesName)</td>
+
+
+            </tr>
+
+            <tr>
+                <td colspan="2" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesGender)</h4></td>
+                <td colspan="2">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.CasesGender)
+          .Name("CasesGender")
+          .BindTo(new List<string>() {
+              "ذكر",
+             "أنثى",
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.CasesGender)
+                    </span>
+                </td>
+                <td colspan="1" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesAge)</h4></td>
+                <td colspan="1">@Html.Kendo().NumericTextBoxFor(model => model.CasesAge)@Html.ValidationMessageFor(model => model.CasesAge)</td>
+                <td colspan="1" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesCitizen)</h4></td>
+                <td colspan="1">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.CasesCitizen)
+          .Name("CasesCitizen")
+          .BindTo(new List<string>() {
+              "مواطن",
+             "لاجئ",
+          })
+                        )
+
+
+                        @Html.ValidationMessageFor(model => model.CasesCitizen)
+                    </span>
+                </td>
+            </tr>
+            <tr>
+
+
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.StudyFather)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.StudyFather)
+          .Name("StudyFather")
+          .BindTo(new List<string>() {
+              "جامعي",
+             "ثانوي",
+             "اعدادي",
+             "ابتدائي",
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.StudyFather)
+                    </span>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.StudyMother)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.StudyMother)
+          .Name("StudyMother")
+          .BindTo(new List<string>() {
+              "جامعي",
+             "ثانوي",
+             "اعدادي",
+             "ابتدائي",
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.StudyMother)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.FatherWork)</h4></td>
+                <td colspan="4">@Html.EditorFor(model => model.FatherWork)@Html.ValidationMessageFor(model => model.FatherWork)</td>
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.MotherWork)</h4></td>
+                <td colspan="4">@Html.EditorFor(model => model.MotherWork)@Html.ValidationMessageFor(model => model.MotherWork)</td>
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.ParentalStatus)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.ParentalStatus)
+          .Name("ParentalStatus")
+          .BindTo(new List<string>() {
+              "كلاهمها احياء",
+             "أب متوفي",
+             "أم متوفية",
+             "كلاهما متوفيين",
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.ParentalStatus)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.ParentsRelationship)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.ParentsRelationship)
+          .Name("ParentsRelationship")
+          .BindTo(new List<string>() {
+              "منسجمة",
+             "على خلاف",
+             "منفصلين",
+             "لا يوجد",
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.ParentsRelationship)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.EconomicLevel)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.EconomicLevel)
+          .Name("EconomicLevel")
+          .BindTo(new List<string>() {
+              "فقر",
+             "متوسط",
+             "غني",
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.EconomicLevel)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesMobile)</h4></td>
+                <td colspan="4">@Html.EditorFor(model => model.CasesMobile)@Html.ValidationMessageFor(model => model.CasesMobile)</td>
+            </tr>
+
+
+
+        </tbody>
+
+    </table>
+
+    <div class="grid-title">
+        <h3 class="alert alert-warning">التكوين الاسري</h3>
+    </div>
+
+    <table class="table table-bordered no-more-tables">
+        <tbody>
+
+            <tr>
+                <td colspan="2" class="alert alert-info"><h4>@Html.LabelFor(model => model.BrothersNumber)</h4></td>
+                <td colspan="2">@Html.Kendo().NumericTextBoxFor(model => model.BrothersNumber)@Html.ValidationMessageFor(model => model.BrothersNumber)</td>
+                <td colspan="2" class="alert alert-info"><h4>@Html.LabelFor(model => model.MaleNumber)</h4></td>
+                <td colspan="2">@Html.Kendo().NumericTextBoxFor(model => model.MaleNumber)@Html.ValidationMessageFor(model => model.MaleNumber)</td>
+            </tr>
+            <tr></tr>
+
+            <tr>
+                <td colspan="2" class="alert alert-info"><h4>@Html.LabelFor(model => model.FemalNumber)</h4></td>
+                <td colspan="2">@Html.Kendo().NumericTextBoxFor(model => model.FemalNumber)@Html.ValidationMessageFor(model => model.FemalNumber)</td>
+                <td colspan="2" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesSorted)</h4></td>
+                <td colspan="2">@Html.Kendo().NumericTextBoxFor(model => model.CasesSorted)@Html.ValidationMessageFor(model => model.CasesSorted)</td>
+            </tr>
+        </tbody>
+
+
+
+    </table>
+
+    <div class="grid-title">
+        <h3 class="alert alert-warning">بيانات السكن والمنطقة</h3>
+    </div>
+    <table class="table table-bordered no-more-tables">
+        <tbody>
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.Childlives)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.Childlives)
+          .Name("Childlives")
+          .BindTo(new List<string>() {
+              "الوالدين",
+              "الأب",
+              "الأم",
+              "غير ذلك",
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.Childlives)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.ChildLivesWith)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.ChildLivesWith)
+          .Name("ChildLivesWith")
+          .BindTo(new List<string>() {
+              "العائلة",
+              "عائلة بدلية",
+              "مؤسسة رعاية",
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.ChildLivesWith)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesAdress)</h4></td>
+
+                <td colspan="4">
+
+
+
+                    @(Html.Kendo().DropDownListFor(model => model.GovernorateID)
+    .HtmlAttributes(new { style = "width: 100%;" })
+    .DataTextField("GovernorateName")
+    .DataValueField("GovernorateID")
+    .Filter("contains")
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+
+            read.Action("GetGovernorate", "Cases");
+        })
+       .ServerFiltering(true);
+    })
+
+
+                    )
+
+                    @Html.ValidationMessageFor(model => model.GovernorateID)
+
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AreaID)</h4></td>
+
+                <td colspan="4">
+
+
+
+                    @(Html.Kendo().DropDownListFor(model => model.AreaID)
+    .HtmlAttributes(new { style = "width: 100%;" })
+    .DataTextField("AreaName")
+    .DataValueField("AreaID")
+    .Filter("contains")
+    .DataSource(source =>
+    {
+        source.Read(read =>
+        {
+
+            read.Action("GetArea", "Cases").Data("filtermunicipality");
+        })
+        .ServerFiltering(true);
+    })
+     .CascadeFrom("GovernorateID")
+                    )
+
+                    @Html.ValidationMessageFor(model => model.AreaID)
+
+
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AreasRating)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.AreasRating)
+          .Name("AreasRating")
+          .BindTo(new List<string>() {
+              "حي",
+              "مخيم",
+              "قرية",
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.AreasRating)
+                    </span>
+                </td>
+
+            </tr>
+
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesAdress)</h4></td>
+                <td colspan="4">@Html.EditorFor(model => model.CasesAdress)@Html.ValidationMessageFor(model => model.CasesAdress)</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="grid-title">
+        <h3 class="alert alert-warning">بيانات المدرسة والحالة التعليمية</h3>
+    </div>
+    <table class="table table-bordered no-more-tables">
+        <tbody>
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.ChildStudy)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.ChildStudy)
+          .Name("ChildStudy")
+          .BindTo(new List<string>() {
+              "نعم",
+              "لا",
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.ChildStudy)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.EducationalLevel)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.EducationalLevel)
+          .Name("EducationalLevel")
+          .BindTo(new List<string>() {
+              "ابتدائي",
+              "اعدادي",
+               "ثانوي",
+               "لا يوجد",
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.EducationalLevel)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.SchoolType)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.SchoolType)
+          .Name("SchoolType")
+          .BindTo(new List<string>() {
+              "حكومي",
+              "وكالة",
+               "خاص",
+                "رياض اطفال",
+                 "غير ملتحق بمدرسة",
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.SchoolType)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.SchoolName)</h4></td>
+                <td colspan="4">@Html.EditorFor(model => model.SchoolName)@Html.ValidationMessageFor(model => model.SchoolName)</td>
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.CasesAssault)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.CasesAssault)
+          .Name("CasesAssault")
+          .BindTo(new List<string>() {
+              "نعم",
+              "لا",
+
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.CasesAssault)
+                    </span>
+                </td>
+
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+
+    <div id="Hidshow">
+
+        <div class="grid-title">
+            <h3 class="alert alert-warning">المعلومات الاساسية عن المعتدي</h3>
+        </div>
+        <table class="table table-bordered no-more-tables">
+            <tbody>
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.KnownAssailant)</h4></td>
+                    <td colspan="4">
+                        <span>
+                            @(Html.Kendo().DropDownListFor(model => model.KnownAssailant)
+          .Name("KnownAssailant")
+          .BindTo(new List<string>() {
+              "نعم",
+              "لا",
+
+
+
+
+
+
+          })
+                            )
+                            @Html.ValidationMessageFor(model => model.KnownAssailant)
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssailantName)</h4></td>
+                    <td colspan="4">@Html.EditorFor(model => model.AssailantName)@Html.ValidationMessageFor(model => model.AssailantName)</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssailanKinship)</h4></td>
+                    <td colspan="4">
+                        <span>
+                            @(Html.Kendo().DropDownListFor(model => model.AssailanKinship)
+          .Name("AssailanKinship")
+          .BindTo(new List<string>() {
+              "أب",
+              "أم",
+              "اخ",
+              "اخت",
+              "جار",
+              "زميل بالدراسة",
+              "طبيب",
+              "مجهول",
+              "صديق",
+              "ممرض",
+              "زوج الام",
+              "زوجة الاب",
+              "سائق",
+               "بائع",
+               "غير ذلك",
+
+
+
+
+
+
+
+          })
+                            )
+                            @Html.ValidationMessageFor(model => model.AssailanKinship)
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssailanGender)</h4></td>
+                    <td colspan="4">
+                        <span>
+                            @(Html.Kendo().DropDownListFor(model => model.AssailanGender)
+          .Name("AssailanGender")
+          .BindTo(new List<string>() {
+              "ذكر",
+              "أنثى",
+
+
+
+
+
+
+          })
+                            )
+                            @Html.ValidationMessageFor(model => model.AssailanGender)
+                        </span>
+                    </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <th colspan=8 class="text-right" style="width:30%">نوع الاعتداءالاساءة)</th>
+
+
+                </tr>
+
+                <tr>
+
+                    <td><span>@Html.LabelFor(model => model.AssaultPhysical) @Html.CheckBoxFor(model => model.AssaultPhysical) @Html.ValidationMessageFor(model => model.AssaultPhysical)</span></td>
+                    <td><span> @Html.LabelFor(model => model.AssaultSexual)@Html.CheckBoxFor(model => model.AssaultSexual) @Html.ValidationMessageFor(model => model.AssaultSexual)</span></td>
+                    <td><span> @Html.LabelFor(model => model.AssaultVerbal)@Html.CheckBoxFor(model => model.AssaultVerbal) @Html.ValidationMessageFor(model => model.AssaultVerbal)</span></td>
+                    <td><span> @Html.LabelFor(model => model.AssaultNeglecting)@Html.CheckBoxFor(model => model.AssaultNeglecting) @Html.ValidationMessageFor(model => model.AssaultNeglecting)</span></td>
+                    <td><span> @Html.LabelFor(model => model.AssaultSpy)@Html.CheckBoxFor(model => model.AssaultSpy) @Html.ValidationMessageFor(model => model.AssaultSpy)</span></td>
+                    <td><span> @Html.LabelFor(model => model.AssaultExploit)@Html.CheckBoxFor(model => model.AssaultExploit) @Html.ValidationMessageFor(model => model.AssaultNeglecting)</span></td>
+                    <td><span> @Html.LabelFor(model => model.AssaultKidnapping)@Html.CheckBoxFor(model => model.AssaultKidnapping) @Html.ValidationMessageFor(model => model.AssaultKidnapping)</span></td>
+
+
+
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="grid-title">
+            <h3 class="alert alert-warning">معلومات عن الاعتداء</h3>
+        </div>
+        <table class="table table-bordered no-more-tables">
+            <tbody>
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssaultDate)</h4></td>
+                    <td colspan="4"> @Html.Kendo().DatePickerFor(model => model.AssaultDate) @Html.ValidationMessageFor(model => model.AssaultDate)</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssaultPlace)</h4></td>
+                    <td colspan="4">
+                        <span>
+                            @(Html.Kendo().DropDownListFor(model => model.AssaultPlace)
+          .Name("AssaultPlace")
+          .BindTo(new List<string>() {
+              "المنزل",
+              "المدرسة",
+               "المستشفى",
+                "اماكن عامة",
+
+
+
+
+
+
+          })
+                            )
+                            @Html.ValidationMessageFor(model => model.AssaultPlace)
+                        </span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssaultReport)</h4></td>
+                    <td colspan="4">@Html.EditorFor(model => model.AssaultReport)@Html.ValidationMessageFor(model => model.AssaultReport)</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssaultRepeatAttack)</h4></td>
+                    <td colspan="4">
+                        <span>
+                            @(Html.Kendo().DropDownListFor(model => model.AssaultRepeatAttack)
+          .Name("AssaultRepeatAttack")
+          .BindTo(new List<string>() {
+              "نعم",
+              "لا",
+               "غير معروف",
+
+
+
+
+
+
+          })
+                            )
+                            @Html.ValidationMessageFor(model => model.AssaultRepeatAttack)
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.AssaultLevePain)</h4></td>
+                    <td colspan="4">
+                        <span>
+                            @(Html.Kendo().DropDownListFor(model => model.AssaultLevePain)
+          .Name("AssaultLevePain")
+          .BindTo(new List<string>() {
+              "خفيف",
+              "متوسط",
+               "كبير",
+
+
+
+
+
+
+          })
+                            )
+                            @Html.ValidationMessageFor(model => model.AssaultLevePain)
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.ChildConvertingFoundation)</h4></td>
+                    <td colspan="4">
+                        <span>
+                            @(Html.Kendo().DropDownListFor(model => model.ChildConvertingFoundation)
+          .Name("ChildConvertingFoundation")
+          .BindTo(new List<string>() {
+              "نعم",
+              "لا",
+
+
+
+
+
+
+          })
+                            )
+                            @Html.ValidationMessageFor(model => model.ChildConvertingFoundation)
+                        </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.CenterName)</h4></td>
+                    <td colspan="4">@Html.EditorFor(model => model.CenterName)@Html.ValidationMessageFor(model => model.CenterName)</td>
+                </tr>
+
+                <tr>
+                    <th colspan=8 class="text-right" style="width:30%">آثار نتاتجة عن الاعتداء </th>
+
+
+                </tr>
+
+                <tr>
+
+                    <td><span>@Html.LabelFor(model => model.Effects_break) @Html.CheckBoxFor(model => model.Effects_break) @Html.ValidationMessageFor(model => model.Effects_break)</span></td>
+                    <td><span> @Html.LabelFor(model => model.Effects_Wounds)@Html.CheckBoxFor(model => model.Effects_Wounds) @Html.ValidationMessageFor(model => model.Effects_Wounds)</span></td>
+                    <td><span> @Html.LabelFor(model => model.Effects_Bruising)@Html.CheckBoxFor(model => model.Effects_Bruising) @Html.ValidationMessageFor(model => model.Effects_Bruising)</span></td>
+                    <td><span> @Html.LabelFor(model => model.Effects_Distortion)@Html.CheckBoxFor(model => model.Effects_Distortion) @Html.ValidationMessageFor(model => model.Effects_Distortion)</span></td>
+                    <td><span> @Html.LabelFor(model => model.Effects_Burns)@Html.CheckBoxFor(model => model.Effects_Burns) @Html.ValidationMessageFor(model => model.Effects_Burns)</span></td>
+
+
+                </tr>
+
+                <tr>
+                    <th colspan=8 class="text-right" style="width:30%">قام الطفل بتبليغ : </th>
+
+
+                </tr>
+
+                <tr>
+
+                    <td><span>@Html.LabelFor(model => model.intimation_Parents) @Html.CheckBoxFor(model => model.intimation_Parents) @Html.ValidationMessageFor(model => model.intimation_Parents)</span></td>
+                    <td><span> @Html.LabelFor(model => model.intimation_Police)@Html.CheckBoxFor(model => model.intimation_Police) @Html.ValidationMessageFor(model => model.intimation_Police)</span></td>
+                    <td><span> @Html.LabelFor(model => model.intimation_Corporation)@Html.CheckBoxFor(model => model.intimation_Corporation) @Html.ValidationMessageFor(model => model.intimation_Corporation)</span></td>
+                    <td><span> @Html.LabelFor(model => model.intimation_School)@Html.CheckBoxFor(model => model.intimation_School) @Html.ValidationMessageFor(model => model.intimation_School)</span></td>
+                    <td><span> @Html.LabelFor(model => model.intimation_Friend)@Html.CheckBoxFor(model => model.intimation_Friend) @Html.ValidationMessageFor(model => model.intimation_Friend)</span></td>
+
+
+                </tr>
+
+
+                <tr>
+                    <td colspan="8"> @Html.LabelFor(model => model.IncidentDescription) @Html.Kendo().EditorFor(model => model.IncidentDescription)@Html.ValidationMessageFor(model => model.IncidentDescription)</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="grid-title">
+        <h3 class="alert alert-warning">الاعراض والتشخيص</h3>
+    </div>
+
+    <table class="table table-bordered no-more-tables">
+        <tbody>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.undesirable_Behavior)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.undesirable_Behavior)
+          .Name("undesirable_Behavior")
+          .BindTo(new List<string>() {
+              "يومي",
+              "اسبوعي",
+                "شهري",
+                  "غير ذلك",
+
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.undesirable_Behavior)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.RepeatBehavior)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.RepeatBehavior)
+          .Name("RepeatBehavior")
+          .BindTo(new List<string>() {
+              "1-2",
+              "2-3",
+              "3-4",
+                "5-6",
+                  "أكثر",
+
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.RepeatBehavior)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.foreman_For_behavior)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.foreman_For_behavior)
+          .Name("foreman_For_behavior")
+          .BindTo(new List<string>() {
+              "الوالدين",
+              "الأخوة والاخوات",
+                "المعلمون",
+                  "الأصدقاء",
+
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.foreman_For_behavior)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="4" class="alert alert-info"><h4>@Html.LabelFor(model => model.TimeBehavior)</h4></td>
+                <td colspan="4">
+                    <span>
+                        @(Html.Kendo().DropDownListFor(model => model.TimeBehavior)
+          .Name("TimeBehavior")
+          .BindTo(new List<string>() {
+              "2-3 دقيقة",
+              "5-6 دقيقة",
+                "7-8 دقيقة",
+                  "10-9 دقيقة",
+                     "أكثر من 10 دقائق",
+
+
+
+
+
+
+
+          })
+                        )
+                        @Html.ValidationMessageFor(model => model.TimeBehavior)
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+                <th colspan=8 class="text-right" style="width:30%">تصنيف الاضطراب : </th>
+
+
+            </tr>
+
+            <tr>
+
+                <td><span>@Html.LabelFor(model => model.Disorder_Behavioural) @Html.CheckBoxFor(model => model.Disorder_Behavioural) @Html.ValidationMessageFor(model => model.Disorder_Behavioural)</span></td>
+                <td><span> @Html.LabelFor(model => model.Disorder_Psychological)@Html.CheckBoxFor(model => model.Disorder_Psychological) @Html.ValidationMessageFor(model => model.Disorder_Psychological)</span></td>
+                <td><span> @Html.LabelFor(model => model.Disorder_Learn)@Html.CheckBoxFor(model => model.Disorder_Learn) @Html.ValidationMessageFor(model => model.Disorder_Learn)</span></td>
+                <td><span> @Html.LabelFor(model => model.Disorder_Pronounce)@Html.CheckBoxFor(model => model.Disorder_Pronounce) @Html.ValidationMessageFor(model => model.Disorder_Pronounce)</span></td>
+                <td><span> @Html.LabelFor(model => model.Disorder_Urination)@Html.CheckBoxFor(model => model.Disorder_Urination) @Html.ValidationMessageFor(model => model.Disorder_Urination)</span></td>
+                <td><span> @Html.LabelFor(model => model.Disorder_Sleep)@Html.CheckBoxFor(model => model.Disorder_Sleep) @Html.ValidationMessageFor(model => model.Disorder_Sleep)</span></td>
+
+
+            </tr>
+
+            <tr>
+
+                <td ><span> @Html.LabelFor(model => model.Disorder_PositionsShocking)@Html.CheckBoxFor(model => model.Disorder_PositionsShocking) @Html.ValidationMessageFor(model => model.Disorder_PositionsShocking)</span></td>
+                <td colspan=2><span> @Html.LabelFor(model => model.Disorder_Maltreatment)@Html.CheckBoxFor(model => model.Disorder_Maltreatment) @Html.ValidationMessageFor(model => model.Disorder_Maltreatment)</span></tdcolspan=2>
+                <td ><span> @Html.LabelFor(model => model.Disorder_SexualHarassment)@Html.CheckBoxFor(model => model.Disorder_SexualHarassment) @Html.ValidationMessageFor(model => model.Disorder_SexualHarassment)</span></td>
+                <td><span> @Html.LabelFor(model => model.Disorder_rape)@Html.CheckBoxFor(model => model.Disorder_rape) @Html.ValidationMessageFor(model => model.Disorder_rape)</span></td>
+                <td><span> @Html.LabelFor(model => model.Disorder_Resuscitatesexual)@Html.CheckBoxFor(model => model.Disorder_Resuscitatesexual) @Html.ValidationMessageFor(model => model.Disorder_Resuscitatesexual)</span></td>
+       
+
+
+            </tr>
+
+            <tr>
+                <td colspan="8"> @Html.LabelFor(model => model.Recommendations) @Html.Kendo().EditorFor(model => model.Recommendations)@Html.ValidationMessageFor(model => model.Recommendations)</td>
+            </tr>
+            </tbody>
+        </table>
+
+</div>

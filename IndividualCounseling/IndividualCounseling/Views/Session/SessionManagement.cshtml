@@ -1,0 +1,109 @@
+﻿@using IndividualCounseling.Models.Session
+@{
+    ViewBag.Title = "SessionManagement";
+    Layout = "~/Views/Shared/_SessionLayoutPage.cshtml";
+}
+
+
+<script>
+    kendo.culture("en-GB");
+</script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="grid simple ">
+            <div class="grid-title no-border">
+                <div class="page-title">
+                    <i class="icon-custom-left"></i>
+                    <h3>ادارة - <span class="semi-bold"> الجلسات</span></h3>
+                    <h3>اسم الحالة - <span class="semi-bold"> @ViewBag.CasesName</span></h3>
+                </div>
+                </div>
+
+            <div class="grid-body no-border">
+
+
+                @(Html.Kendo().Grid<SessionViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.sessionID).Width(50).Title("رقم ").Hidden();
+        columns.Bound(p => p.CaseID).Width(50).Title("رقم ").Hidden();
+
+
+        columns.Bound(p => p.sessionDate).Width(150).HeaderHtmlAttributes(new { @title = "تاريخ الجلسة " }).Format("{0:dd/MM/yyyy}").Title("تاريخ الجلسة ");
+        columns.Bound(p => p.sessionResult).Width(300).HeaderHtmlAttributes(new { @title = "النتائج" }).Title("النتائج").Encoded(false);
+        columns.Bound(p => p.sessionRecommendations).Width(300).HeaderHtmlAttributes(new { @title = "التوصيات" }).Title("التوصيات").Encoded(false);
+
+
+
+
+        columns.Command(command => { command.Edit().Text("تعديل"); command.Destroy().Text("حذف"); }).Width(200);
+    })
+    .ToolBar(toolBar =>
+    {
+        toolBar.Create().Text("اضافة  جلسة");
+    })
+    .Editable(editable => editable.Mode(GridEditMode.PopUp).Window(w => w.Title(" بيانات الجلسة").Width(600).Height(600)).TemplateName("SessionEdit"))
+     .Selectable(selectable => selectable
+            .Mode(GridSelectionMode.Multiple))
+           .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .ServerOperation(false)
+        .Events(events => events.Error("errorHandler"))
+
+        .Model(model =>
+        {
+            model.Id(p => p.sessionID);
+            model.Field(p => p.sessionID).Editable(false);
+
+            string currentUrlPage = HttpContext.Current.Request.Url.PathAndQuery;
+
+            string[] words = currentUrlPage.Split('=');
+            string s = "";
+            foreach (string word in words)
+            {
+                s = word.ToString();
+            }
+            int x = int.Parse(s);
+            model.Field(p => p.CaseID).DefaultValue(x);
+
+
+        })
+        .Read(read => read.Action("Session_Read", "Session"))
+        .Update(update => update.Action("Session_Update", "Session"))
+        .Create(create => create.Action("Session_Create", "Session"))
+        .Destroy(destroy => destroy.Action("Session_Destroy", "Session"))
+    )
+                )
+
+
+
+                <script type="text/javascript">
+                    function errorHandler(e) {
+                        if (e.errors) {
+                            var message = "Errors:\n";
+                            $.each(e.errors, function (key, value) {
+                                if ('errors' in value) {
+                                    $.each(value.errors, function () {
+                                        message += this + "\n";
+                                    });
+                                }
+                            });
+                            alert(message);
+                        }
+                    }
+                </script>
+
+
+            </div>
+            </div>
+          
+        </div>
+    </div>
+

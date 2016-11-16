@@ -1,0 +1,95 @@
+﻿@using IndividualCounseling.Models.Project
+@{
+    ViewBag.Title = "ادارة المشاريع";
+}
+
+
+
+<script>
+    kendo.culture("en-GB");
+</script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="grid simple ">
+            <div class="grid-title no-border">
+                <div class="page-title">
+                    <i class="icon-custom-left"></i>
+                    <h3>ادارة - <span class="semi-bold"> المشاريع</span></h3>
+                </div>
+            </div>
+            <div class="grid-body no-border">
+                @if ((string)Session["UserType"] == ("مدير"))
+                {
+
+                @(Html.Kendo().Grid<projectViewModle>()
+            .Name("grid")
+            .Columns(columns =>
+            {
+                columns.Bound(p => p.ProjectID).Width(50).Title("رقم ").Hidden();
+                columns.Bound(p => p.ProjectName).Width(200).HeaderHtmlAttributes(new { @title = "اسم المشروع" }).Title("اسم المشروع");
+
+                columns.Bound(p => p.StartDate).Width(150).HeaderHtmlAttributes(new { @title = "تاريخ البداية " }).Format("{0:dd/MM/yyyy}").Title("تاريخ البداية ");
+                columns.Bound(p => p.EndDate).Width(150).HeaderHtmlAttributes(new { @title = "تاريخ النهاية " }).Format("{0:dd/MM/yyyy}").Title("تاريخ النهاية ");
+                columns.Bound(p => p.Description).Width(200).HeaderHtmlAttributes(new { @title = "الوصف" }).Title("الوصف");
+                columns.Bound(p => p.Status).Width(50).HeaderHtmlAttributes(new { @title = "الحالة" }).ClientTemplate("<input type='checkbox' disabled='disabled' #= Status ? checked='checked': '' # class='chkbx' />").HtmlAttributes(new { style = "text-align: center" }).Title("الحالة");
+
+
+
+                columns.Command(command => { command.Edit().Text("تعديل"); command.Destroy().Text("حذف"); }).Width(100);
+            })
+            .ToolBar(toolBar =>
+            {
+                toolBar.Create().Text("اضافة مشروع جديد");
+            })
+            .Editable(editable => editable.Mode(GridEditMode.PopUp).Window(w => w.Title(" بيانات المشروع").Width(400).Height(405)))
+             .Selectable(selectable => selectable
+                    .Mode(GridSelectionMode.Multiple))
+                   .Pageable()
+            .Sortable()
+            .Scrollable()
+            .Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+            .HtmlAttributes(new { style = "height:550px;" })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(20)
+                .ServerOperation(false)
+                .Events(events => events.Error("errorHandler"))
+
+                .Model(model =>
+                {
+                    model.Id(p => p.ProjectID);
+                    model.Field(p => p.ProjectID).Editable(false);
+
+
+                })
+                .Read(read => read.Action("Project_Read", "Project"))
+                .Update(update => update.Action("Project_Update", "Project"))
+                .Create(create => create.Action("Project_Create", "Project"))
+                .Destroy(destroy => destroy.Action("Project_Destroy", "Project"))
+            )
+                )
+
+
+
+                <script type="text/javascript">
+                    function errorHandler(e) {
+                        if (e.errors) {
+                            var message = "Errors:\n";
+                            $.each(e.errors, function (key, value) {
+                                if ('errors' in value) {
+                                    $.each(value.errors, function () {
+                                        message += this + "\n";
+                                    });
+                                }
+                            });
+                            alert(message);
+                        }
+                    }
+                </script>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>

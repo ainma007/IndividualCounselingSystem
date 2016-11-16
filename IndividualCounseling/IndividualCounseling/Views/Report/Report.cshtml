@@ -1,0 +1,387 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/Cases_LayoutPage.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="grid simple ">
+            <div class="grid-title no-border">
+                <div class="page-title">
+                    <i class="icon-custom-left"></i>
+                    <h3>تقرير  - <span class="semi-bold"> الحالات الفردية</span></h3>
+                    <h3>مشروع - <span class="semi-bold"> @ViewBag.ProjectName </span></h3>
+                </div>
+            </div>
+            <div class="grid-body no-border">
+                <div class="grid-title">
+                    <h3 class="alert alert-warning">اولا: تقرير الحالات بناء على توزيع الاعمار حسب المحافظات</h3>
+                </div>
+                <table class="table table-bordered no-more-tables">
+                    <tbody style="text-align:center">
+
+                        <tr>
+                            <td colspan="2" class="alert alert-success"><h4></h4></td>
+
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red"> العمر من 0-5</h4></td>
+
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red">العمر من 6-12</h4></td>
+
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red">العمر من 13-17</h4></td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="alert alert-success"><h4 style="color:blue">المحافظة</h4></td>
+
+                            <td colspan="1" class="alert alert-warning"><h4 style="color:green"> ذكور</h4></td>
+                            <td colspan="1" class="alert alert-error"><h4 style="color:indigo"> اناث</h4></td>
+                            <td colspan="1" class="alert alert-warning"><h4 style="color:green"> ذكور</h4></td>
+                            <td colspan="1" class="alert alert-error"><h4 style="color:indigo"> اناث</h4></td>
+                            <td colspan="1" class="alert alert-warning"><h4 style="color:green"> ذكور</h4></td>
+                            <td colspan="1" class="alert alert-error"><h4 style="color:indigo"> اناث</h4></td>
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="alert alert-info"><h4>شمال غزة</h4></td>
+
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale0_5NorthGaza</h4></td>
+                            <td colspan="1"><h4 style="color:indigo"> @ViewBag.ountFemal0_5NorthGaza</h4></td>
+                            <td colspan="1"><h4 style="color:green"> @ViewBag.CountMale6_12NorthGaza</h4></td>
+                            <td colspan="1"><h4 style="color:indigo"> @ViewBag.CountFemal6_12NorthGaza</h4></td>
+                            <td colspan="1"><h4 style="color:green"> @ViewBag.CountMale13_17NorthGaza</h4></td>
+                            <td colspan="1"><h4 style="color:indigo"> @ViewBag.CountFemal13_17NorthGaza</h4></td>
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="alert alert-info"><h4>غزة</h4></td>
+
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale0_5Gaza</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal0_5Gaza</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale6_12Gaza</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal6_12Gaza</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale13_17NorthGaza</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal13_17Gaza</h4></td>
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="alert alert-info"><h4>دير البلح</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale0_5Dair </h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal0_5Dair</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale6_12Dair</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal6_12Dair</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale13_17NorthDair</h4></td>
+
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal13_17Dair</h4></td>
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="alert alert-info"><h4>خانيونس</h4></td>
+
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale0_5Khan</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal0_5Khan</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale6_12Khan</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal6_12Khan</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale13_17NorthKhan</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal13_17Khan</h4></td>
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="alert alert-info"><h4>رفح</h4></td>
+
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale0_5Rafah</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal0_5Rafah</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale6_12Rafah</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal6_12Rafah</h4></td>
+                            <td colspan="1"><h4 style="color:green">@ViewBag.CountMale13_17NorthRafah</h4></td>
+                            <td colspan="1"><h4 style="color:indigo">@ViewBag.CountFemal13_17Rafah</h4></td>
+
+
+
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="grid simple">
+
+                            <div class="col-md-6 , k-ltr "dir="ltr" >
+
+                                @(Html.Kendo().Chart()
+        .Name("chart1")
+        .Title(title => title
+         .Font("bold 16px  Droid Arabic Kufi, serif")
+            .Text(" توزيع الحالات حسب المحافظات وحسب الجنس")
+            .Position(ChartTitlePosition.Top)
+        )
+
+
+        .Legend(legend => legend
+            .Visible(false)
+        )
+        .ChartArea(chartArea => chartArea
+
+            .Background("transparent")
+        )
+        .Series(series =>
+        
+
+        {
+
+            series.Bar(new double[] { @ViewBag.CountNorthGazaMale , @ViewBag.CountGazaMale, @ViewBag.CountDairMale, @ViewBag.CountKhanMale, @ViewBag.CountRafahMale }).Name("ذكور");
+            series.Bar(new double[] { @ViewBag.CountNorthGazaFemal, @ViewBag.CountGazaFemal, @ViewBag.CountDairFemal, @ViewBag.CountKhanFemal, @ViewBag.CountRafahFemal}).Name("إناث");
+        })
+
+        .CategoryAxis(axis => axis
+            .Categories("شمال غزة", "غزة", "دير البلح","خانيونس","رفح")
+            .MajorGridLines(lines => lines.Visible(false))
+           .Labels(labels => labels
+            .Font("bold 14px  Droid Arabic Kufi, serif")
+            )
+        )
+        .ValueAxis(axis => axis
+            .Numeric()
+            
+            .Line(line => line.Visible(false))
+            .MajorGridLines(lines => lines.Visible(true))
+        )
+        .Tooltip(tooltip => tooltip
+            .Visible(true)
+            .Template("#= series.name #: #= value #")
+        )
+                                )
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="k-ltr" dir="ltr">
+                                    @(Html.Kendo().Chart()
+        .Name("chart")
+        .ChartArea(chartArea => chartArea
+            .Background("transparent"))
+        .Title(title => title
+         .Font("bold 16px  Droid Arabic Kufi, serif")
+            .Text("توزيع الحالات حسب المحافظات ")
+            .Position(ChartTitlePosition.Top)
+        )
+        .Legend(legend => legend
+            .Visible(false)
+        )
+        .SeriesDefaults(series =>
+            series.Donut().StartAngle(150)
+        )
+        .Series(series =>
+        {
+            series.Donut(new dynamic[] {
+                new {category = "الشمال",value = @ViewBag.CountNorthGaza,color = "#9de219"},
+                new {category = "غزة",value = @ViewBag.CountGaza,color = "#90cc38"},
+                new {category = "دير البلح",value = @ViewBag.CountDair,color = "#068c35"},
+                new {category = "خانيونس",value = @ViewBag.CountKhan,color = "#006634"},
+                new {category = "رفح",value = @ViewBag.CountRafah,color = "#004d38"},
+            })
+
+            .Name("التوزيع حسب المحافظات")
+            .Labels(labels => labels
+            .Font("bold 14px  Droid Arabic Kufi, serif")
+                .Visible(true)
+                .Position(ChartPieLabelsPosition.OutsideEnd)
+                .Template("#= category #:  #= value#")
+                .Background("transparent")
+            );
+        })
+        .Tooltip(tooltip => tooltip
+            .Visible(true)
+            .Template("#= category # (#= series.name #): #= value #")
+        )
+                                    )
+
+                           
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <script>
+
+               
+            </script>
+
+            <div class="grid-body no-border">
+                <div class="grid-title">
+                    <h3 class="alert alert-warning">ثانيا: تقرير الحالات بناء على توزيع المشاكل  حسب المحافظات</h3>
+                </div>
+                <table class="table table-bordered no-more-tables">
+                    <tbody style="text-align:center">
+
+                        <tr>
+                            <td colspan="4" class="alert alert-success"><h4> المحافظة</h4></td>
+
+
+
+
+
+
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red">شمال غزة</h4></td>
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red">غزة</h4></td>
+
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red">دير البلح</h4></td>
+
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red">خانيونس</h4></td>
+
+                            <td colspan="2" class="alert alert-info"><h4 style="color:red">رفح</h4></td>
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="alert alert-success"><h4 style="color:blue">الاضطراب</h4></td>
+
+                            <td colspan="10"><h4 style="color:green"> أعداد الحالات</h4></td>
+                           
+
+
+
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="alert alert-info"><h4 style="color:red"> مشاكل نفسية</h4></td>
+
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPsychologicalProblemsNorthGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="alert alert-info"><h4 style="color:red">مشاكل سولكية</h4></td>
+
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="alert alert-info"><h4 style="color:red">مشاكل تربوية</h4></td>
+
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="alert alert-info"><h4 style="color:red">مشاكل نطق</h4></td>
+
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="alert alert-info"><h4 style="color:red">سوء معاملة</h4></td>
+
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+
+
+
+
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4" class="alert alert-info"><h4 style="color:red">اساءة جنسية</h4></td>
+
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+
+
+
+
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+          

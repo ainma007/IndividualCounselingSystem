@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IndividualCounselingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Area_Table">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaArName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AreaEnName" Type="nvarchar" MaxLength="50" />
+    <Property Name="GovernorateID" Type="int" />
+  </EntityType>
+  <EntityType Name="Case_Table">
+    <Key>
+      <PropertyRef Name="CasesID" />
+    </Key>
+    <Property Name="CasesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CasesNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CasesDate" Type="datetime" />
+    <Property Name="CasesStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="CasesName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CasesGender" Type="nvarchar" MaxLength="50" />
+    <Property Name="CasesAge" Type="int" />
+    <Property Name="CasesCitizen" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudyFather" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudyMother" Type="nvarchar" MaxLength="50" />
+    <Property Name="FatherWork" Type="nvarchar" MaxLength="50" />
+    <Property Name="MotherWork" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentalStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentsRelationship" Type="nvarchar" MaxLength="50" />
+    <Property Name="EconomicLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="CasesMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="BrothersNumber" Type="int" />
+    <Property Name="MaleNumber" Type="int" />
+    <Property Name="FemalNumber" Type="int" />
+    <Property Name="CasesSorted" Type="int" />
+    <Property Name="Childlives" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChildLivesWith" Type="nvarchar" MaxLength="50" />
+    <Property Name="GovernorateID" Type="int" />
+    <Property Name="AreaID" Type="int" />
+    <Property Name="AreasRating" Type="nvarchar" MaxLength="50" />
+    <Property Name="CasesAdress" Type="nvarchar(max)" />
+    <Property Name="ChildStudy" Type="nvarchar" MaxLength="50" />
+    <Property Name="EducationalLevel" Type="nvarchar" MaxLength="50" />
+    <Property Name="SchoolType" Type="nvarchar" MaxLength="50" />
+    <Property Name="SchoolName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CasesAssault" Type="nvarchar" MaxLength="50" />
+    <Property Name="KnownAssailant" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssailantName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssailanKinship" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssailanGender" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssaultPhysical" Type="bit" />
+    <Property Name="AssaultSexual" Type="bit" />
+    <Property Name="AssaultVerbal" Type="bit" />
+    <Property Name="AssaultNeglecting" Type="bit" />
+    <Property Name="AssaultSpy" Type="bit" />
+    <Property Name="AssaultExploit" Type="bit" />
+    <Property Name="AssaultKidnapping" Type="bit" />
+    <Property Name="AssaultDate" Type="datetime" />
+    <Property Name="AssaultPlace" Type="nvarchar" MaxLength="100" />
+    <Property Name="AssaultReport" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssaultRepeatAttack" Type="nvarchar" MaxLength="50" />
+    <Property Name="AssaultLevePain" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChildConvertingFoundation" Type="nvarchar" MaxLength="50" />
+    <Property Name="CenterName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Effects_break" Type="bit" />
+    <Property Name="Effects_Wounds" Type="bit" />
+    <Property Name="Effects_Bruising" Type="bit" />
+    <Property Name="Effects_Distortion" Type="bit" />
+    <Property Name="Effects_Burns" Type="bit" />
+    <Property Name="intimation_Parents" Type="bit" />
+    <Property Name="intimation_Police" Type="bit" />
+    <Property Name="intimation_Corporation" Type="bit" />
+    <Property Name="intimation_School" Type="bit" />
+    <Property Name="intimation_Friend" Type="bit" />
+    <Property Name="IncidentDescription" Type="nvarchar(max)" />
+    <Property Name="undesirable_Behavior" Type="nvarchar" MaxLength="50" />
+    <Property Name="RepeatBehavior" Type="nvarchar" MaxLength="50" />
+    <Property Name="foreman_For_behavior" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeBehavior" Type="nvarchar" MaxLength="50" />
+    <Property Name="Disorder_Behavioural" Type="bit" />
+    <Property Name="Disorder_Psychological" Type="bit" />
+    <Property Name="Disorder_Learn" Type="bit" />
+    <Property Name="Disorder_Pronounce" Type="bit" />
+    <Property Name="Disorder_Urination" Type="bit" />
+    <Property Name="Disorder_Sleep" Type="bit" />
+    <Property Name="Disorder_PositionsShocking" Type="bit" />
+    <Property Name="Disorder_Maltreatment" Type="bit" />
+    <Property Name="Disorder_SexualHarassment" Type="bit" />
+    <Property Name="Disorder_rape" Type="bit" />
+    <Property Name="Disorder_Resuscitatesexual" Type="bit" />
+    <Property Name="Recommendations" Type="ntext" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="Governorate_Table">
+    <Key>
+      <PropertyRef Name="GovernorateID" />
+    </Key>
+    <Property Name="GovernorateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GovernorateArName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProjectControl_Table">
+    <Key>
+      <PropertyRef Name="ProjectControlID" />
+    </Key>
+    <Property Name="ProjectControlID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProjectTable">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar(max)" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Session_Table">
+    <Key>
+      <PropertyRef Name="sessionID" />
+    </Key>
+    <Property Name="sessionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sessionDate" Type="datetime" />
+    <Property Name="sessionResult" Type="nvarchar(max)" />
+    <Property Name="sessionRecommendations" Type="nvarchar" MaxLength="50" />
+    <Property Name="CaseID" Type="int" />
+  </EntityType>
+  <EntityType Name="Users_Table">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Area_Table_Governorate_Table">
+    <End Role="Governorate_Table" Type="Self.Governorate_Table" Multiplicity="0..1" />
+    <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Governorate_Table">
+        <PropertyRef Name="GovernorateID" />
+      </Principal>
+      <Dependent Role="Area_Table">
+        <PropertyRef Name="GovernorateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Case_Table_Area_Table">
+    <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="0..1" />
+    <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area_Table">
+        <PropertyRef Name="AreaID" />
+      </Principal>
+      <Dependent Role="Case_Table">
+        <PropertyRef Name="AreaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Case_Table_Governorate_Table">
+    <End Role="Governorate_Table" Type="Self.Governorate_Table" Multiplicity="0..1" />
+    <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Governorate_Table">
+        <PropertyRef Name="GovernorateID" />
+      </Principal>
+      <Dependent Role="Case_Table">
+        <PropertyRef Name="GovernorateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Case_Table_ProjectTable">
+    <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="0..1" />
+    <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTable">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Case_Table">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Case_Table_Users_Table">
+    <End Role="Users_Table" Type="Self.Users_Table" Multiplicity="0..1" />
+    <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Table">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Case_Table">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectControl_Table_ProjectTable">
+    <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="0..1" />
+    <End Role="ProjectControl_Table" Type="Self.ProjectControl_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTable">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="ProjectControl_Table">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectControl_Table_Users_Table">
+    <End Role="Users_Table" Type="Self.Users_Table" Multiplicity="0..1" />
+    <End Role="ProjectControl_Table" Type="Self.ProjectControl_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Table">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ProjectControl_Table">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_Table_Case_Table">
+    <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="0..1" />
+    <End Role="Session_Table" Type="Self.Session_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Case_Table">
+        <PropertyRef Name="CasesID" />
+      </Principal>
+      <Dependent Role="Session_Table">
+        <PropertyRef Name="CaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IndividualCounselingModelStoreContainer">
+    <EntitySet Name="Area_Table" EntityType="Self.Area_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Table" EntityType="Self.Case_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Governorate_Table" EntityType="Self.Governorate_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectControl_Table" EntityType="Self.ProjectControl_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectTable" EntityType="Self.ProjectTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Session_Table" EntityType="Self.Session_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users_Table" EntityType="Self.Users_Table" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Area_Table_Governorate_Table" Association="Self.FK_Area_Table_Governorate_Table">
+      <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+      <End Role="Area_Table" EntitySet="Area_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Case_Table_Area_Table" Association="Self.FK_Case_Table_Area_Table">
+      <End Role="Area_Table" EntitySet="Area_Table" />
+      <End Role="Case_Table" EntitySet="Case_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Case_Table_Governorate_Table" Association="Self.FK_Case_Table_Governorate_Table">
+      <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+      <End Role="Case_Table" EntitySet="Case_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Case_Table_ProjectTable" Association="Self.FK_Case_Table_ProjectTable">
+      <End Role="ProjectTable" EntitySet="ProjectTable" />
+      <End Role="Case_Table" EntitySet="Case_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Case_Table_Users_Table" Association="Self.FK_Case_Table_Users_Table">
+      <End Role="Users_Table" EntitySet="Users_Table" />
+      <End Role="Case_Table" EntitySet="Case_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectControl_Table_ProjectTable" Association="Self.FK_ProjectControl_Table_ProjectTable">
+      <End Role="ProjectTable" EntitySet="ProjectTable" />
+      <End Role="ProjectControl_Table" EntitySet="ProjectControl_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectControl_Table_Users_Table" Association="Self.FK_ProjectControl_Table_Users_Table">
+      <End Role="Users_Table" EntitySet="Users_Table" />
+      <End Role="ProjectControl_Table" EntitySet="ProjectControl_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_Table_Case_Table" Association="Self.FK_Session_Table_Case_Table">
+      <End Role="Case_Table" EntitySet="Case_Table" />
+      <End Role="Session_Table" EntitySet="Session_Table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
