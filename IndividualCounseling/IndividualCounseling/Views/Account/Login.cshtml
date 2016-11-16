@@ -1,0 +1,152 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>نظام حالات الارشاد الفردي</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="@Url.Content("~/Content/assets/plugins/pace/pace-theme-flash.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/Content/assets/plugins/jquery-scrollbar/jquery.scrollbar.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/plugins/boostrapv3/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/plugins/boostrapv3/css/bootstrap-theme.min.css")" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Content/assets/plugins/font-awesome/css/font-awesome.css")
+    <link href="@Url.Content("~/Content/assets/css/animate.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/rtl/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/rtl/responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/custom-icon-set.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.rtl.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.dataviz.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/jszip.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <script>
+    kendo.culture("en-GB");
+    </script>
+</head>
+<body class="error-body no-top">
+    <div class="container">
+        <div class="row login-container column-seperation">
+
+            <div class="col-md-6">
+                <br>
+                @model IndividualCounseling.Models.Users_Table
+
+                @using (Html.BeginForm())
+            {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h4>تسجيل الدخول </h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "خطأ في اسم المستخدم او كلمة المرور", new { @class = "text-danger" })
+
+                        <div class="grid-body no-border">
+                            <div class="row-fluid">
+                                <div class="form-group">
+
+
+                                    <label for="fullname" class="required">اسم المستخدم</label>
+                                    <div class="row form-row">
+                                        <div class="input-append col-md-10 col-sm-10 primary" style="direction:ltr">
+
+                                            @Html.TextBoxFor(model => model.UserName, new
+                                       {
+                                           htmlAttributes = new { @class = "form-control ", @style = "text-align:center" }
+                                       })
+                                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger", @style = "text-align:center" })
+                                            <span class="add-on"><span class="arrow"></span><i class="fa fa-align-justify"></i> </span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fullname" class="required">كلمة المرور</label>
+                                    <div class="row form-row">
+                                        <div class="input-append col-md-10 col-sm-10 primary" style="direction:ltr">
+
+
+                                            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "password" } })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                            <span class="add-on"><span class="arrow"></span><i class="fa fa-lock"></i> </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="موافق" class="k-button k-primary" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+
+            <div class="col-md-5 col-md-offset-1">
+                <div class="form-group" style="text-align:center">
+                    <img src="@Url.Content("~/Content/assets/img/logo.png")" alt="" data-src="@Url.Content("~/Content/assets/img/logo.png")" width="200" height="200" />
+                </div>
+                <div class="form-group" style="text-align:center">
+                    <p style="color:blue">
+                        المركز الفلسطيني للديمقراطية وحل النزاعات
+
+                    <p style="color:blue">
+                        The Palestinian Center For Democracy And Conflict Resolution
+                    </p>
+                </div>
+
+                <h2 style="text-align:center">نظام ادارة حالات الارشاد الفردي</h2>
+
+
+
+                <br>
+
+                <div style="color:white;text-align:center">
+                    @ViewBag.PM
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN CORE JS FRAMEWORK-->
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-ui/jquery-1.8.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/boostrapv3/js/bootstrap.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Content/assets/plugins/pace/pace.min.js")" type="text/javascript"></script>
+
+
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-validation/js/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/js/login.js")" type="text/javascript"></script>
+
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <!-- END CORE TEMPLATE JS -->
+</body>
+
+
+
+</html>

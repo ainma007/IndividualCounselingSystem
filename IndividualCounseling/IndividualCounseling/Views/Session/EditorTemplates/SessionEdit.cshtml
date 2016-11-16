@@ -1,0 +1,41 @@
+﻿@model IndividualCounseling.Models.Session.SessionViewModel
+<style type="text/css">
+    div.k-edit-form-container {
+        width: 90%;
+    }
+
+        div.k-edit-form-container div.editor-field textarea, input.k-textbox {
+            width: 100%;
+            max-width: none;
+        }
+</style>
+
+
+
+<div class="k-edit-form-container" style="margin:auto;">
+
+    <div class="row">
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sessionDate)
+            @Html.Kendo().DatePickerFor(model => model.sessionDate) @Html.ValidationMessageFor(model => model.sessionDate)
+        </div>
+
+
+        <div class="form-group">
+             @Html.LabelFor(model => model.sessionResult) @Html.Kendo().EditorFor(model => model.sessionResult)@Html.ValidationMessageFor(model => model.sessionResult)
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sessionRecommendations) @Html.Kendo().EditorFor(model => model.sessionRecommendations)@Html.ValidationMessageFor(model => model.sessionRecommendations)
+
+
+        </div>
+
+
+    </div>
+</div>
+

@@ -1,0 +1,180 @@
+﻿@using IndividualCounseling.Models.Project
+@using IndividualCounseling.Models.ProjectControl
+
+@{
+    ViewBag.Title = " الرئيسية";
+}
+
+
+
+<script>
+    kendo.culture("en-GB");
+</script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="grid simple ">
+            <div class="grid-title no-border">
+                <div class="page-title">
+                    <i class="icon-custom-left"></i>
+                    <h3>ادارة - <span class="semi-bold"> المشاريع</span></h3>
+                </div>
+            </div>
+            <div class="grid-body no-border">
+@if ((string)Session["UserType"] == ("مدير"))
+{
+
+                @(Html.Kendo().Grid<projectViewModle>()
+.Name("grid")
+.Columns(columns =>
+{
+    columns.Bound(p => p.ProjectID).Width(50).Title("رقم ").Hidden();
+    columns.Bound(p => p.ProjectName).Width(200).HeaderHtmlAttributes(new { @title = "اسم المشروع" }).Title("اسم المشروع");
+
+    columns.Bound(p => p.StartDate).Width(150).HeaderHtmlAttributes(new { @title = "تاريخ البداية " }).Format("{0:dd/MM/yyyy}").Title("تاريخ البداية ");
+    columns.Bound(p => p.EndDate).Width(150).HeaderHtmlAttributes(new { @title = "تاريخ النهاية " }).Format("{0:dd/MM/yyyy}").Title("تاريخ النهاية ");
+    columns.Bound(p => p.Description).Width(200).HeaderHtmlAttributes(new { @title = "الوصف" }).Title("الوصف");
+    columns.Bound(p => p.Status).Width(50).HeaderHtmlAttributes(new { @title = "الحالة" }).ClientTemplate("<input type='checkbox' disabled='disabled' #= Status ? checked='checked': '' # class='chkbx' />").HtmlAttributes(new { style = "text-align: center" }).Title("الحالة");
+
+    columns.Command(command => command.Custom("الدخول للمشروع").Click("showDetails")).Width(180);
+
+
+})
+
+.Selectable(selectable => selectable
+    .Mode(GridSelectionMode.Multiple))
+   .Pageable()
+.Sortable()
+.Scrollable()
+.Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+.HtmlAttributes(new { style = "height:550px;" })
+.DataSource(dataSource => dataSource
+.Ajax()
+.PageSize(20)
+.ServerOperation(false)
+.Events(events => events.Error("errorHandler"))
+
+.Model(model =>
+{
+    model.Id(p => p.ProjectID);
+    model.Field(p => p.ProjectID).Editable(false);
+
+
+})
+.Read(read => read.Action("Project_Read", "Project"))
+
+)
+                )
+
+                <script>
+        function showDetails(e) {
+            e.preventDefault();
+
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var ProID = dataItem.ProjectID
+            var url = "/Cases/CasesMnagement?ProID=" + ProID;
+            window.location.href = url;
+
+
+
+        }
+                </script>
+
+                <script type="text/javascript">
+                    function errorHandler(e) {
+                        if (e.errors) {
+                            var message = "Errors:\n";
+                            $.each(e.errors, function (key, value) {
+                                if ('errors' in value) {
+                                    $.each(value.errors, function () {
+                                        message += this + "\n";
+                                    });
+                                }
+                            });
+                            alert(message);
+                        }
+                    }
+                </script>
+}
+
+else
+{
+
+
+  @(Html.Kendo().Grid<IndexUserProjectViewModel>()
+.Name("grid")
+.Columns(columns =>
+{
+    columns.Bound(p => p.ProID).Width(50).Title("رقم ").Hidden();
+    columns.Bound(p => p.ProjectName).Width(200).HeaderHtmlAttributes(new { @title = "اسم المشروع" }).Title("اسم المشروع");
+
+    columns.Bound(p => p.startdate).Width(150).HeaderHtmlAttributes(new { @title = "تاريخ البداية " }).Format("{0:dd/MM/yyyy}").Title("تاريخ البداية ");
+    columns.Bound(p => p.endDate).Width(150).HeaderHtmlAttributes(new { @title = "تاريخ النهاية " }).Format("{0:dd/MM/yyyy}").Title("تاريخ النهاية ");
+    columns.Bound(p => p.Description).Width(200).HeaderHtmlAttributes(new { @title = "الوصف" }).Title("الوصف");
+
+    columns.Command(command => command.Custom("الدخول للمشروع").Click("showDetails")).Width(180);
+
+
+})
+
+.Selectable(selectable => selectable
+    .Mode(GridSelectionMode.Multiple))
+   .Pageable()
+.Sortable()
+.Scrollable()
+.Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+.HtmlAttributes(new { style = "height:550px;" })
+.DataSource(dataSource => dataSource
+.Ajax()
+.PageSize(20)
+.ServerOperation(false)
+.Events(events => events.Error("errorHandler"))
+
+.Model(model =>
+{
+    model.Id(p => p.ID);
+    model.Field(p => p.ID).Editable(false);
+
+
+})
+.Read(read => read.Action("Project_Read", "Home"))
+
+)
+    )
+
+    <script>
+        function showDetails(e) {
+            e.preventDefault();
+
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var ProID = dataItem.ProID
+            var url = "/Cases/CasesMnagement?ProID=" + ProID;
+            window.location.href = url;
+
+
+
+        }
+    </script>
+
+                <script type="text/javascript">
+                    function errorHandler(e) {
+                        if (e.errors) {
+                            var message = "Errors:\n";
+                            $.each(e.errors, function (key, value) {
+                                if ('errors' in value) {
+                                    $.each(value.errors, function () {
+                                        message += this + "\n";
+                                    });
+                                }
+                            });
+                            alert(message);
+                        }
+                    }
+                </script>
+
+}
+
+            </div>
+        </div>
+    </div>
+
+</div>

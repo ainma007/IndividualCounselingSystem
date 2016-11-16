@@ -1,0 +1,17 @@
+﻿@model string
+
+
+
+@(Html.Kendo().DropDownListFor(m => m)
+          .Name("UserType")
+          .BindTo(new List<string>() {
+              "مدير",
+              "منسق",
+              "مراقب خارجي",
+          })
+                    .HtmlAttributes(new { style = "width:100%;" })
+
+
+)
+
+@Html.ValidationMessageFor(m => m)

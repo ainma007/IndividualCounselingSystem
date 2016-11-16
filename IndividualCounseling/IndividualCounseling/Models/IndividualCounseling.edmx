@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IndividualCounselingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Area_Table">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaArName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AreaEnName" Type="nvarchar" MaxLength="50" />
+          <Property Name="GovernorateID" Type="int" />
+        </EntityType>
+        <EntityType Name="Case_Table">
+          <Key>
+            <PropertyRef Name="CasesID" />
+          </Key>
+          <Property Name="CasesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CasesNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="CasesDate" Type="datetime" />
+          <Property Name="CasesStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="CasesName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CasesGender" Type="nvarchar" MaxLength="50" />
+          <Property Name="CasesAge" Type="int" />
+          <Property Name="CasesCitizen" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudyFather" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudyMother" Type="nvarchar" MaxLength="50" />
+          <Property Name="FatherWork" Type="nvarchar" MaxLength="50" />
+          <Property Name="MotherWork" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentalStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentsRelationship" Type="nvarchar" MaxLength="50" />
+          <Property Name="EconomicLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CasesMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrothersNumber" Type="int" />
+          <Property Name="MaleNumber" Type="int" />
+          <Property Name="FemalNumber" Type="int" />
+          <Property Name="CasesSorted" Type="int" />
+          <Property Name="Childlives" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChildLivesWith" Type="nvarchar" MaxLength="50" />
+          <Property Name="GovernorateID" Type="int" />
+          <Property Name="AreaID" Type="int" />
+          <Property Name="AreasRating" Type="nvarchar" MaxLength="50" />
+          <Property Name="CasesAdress" Type="nvarchar(max)" />
+          <Property Name="ChildStudy" Type="nvarchar" MaxLength="50" />
+          <Property Name="EducationalLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="SchoolType" Type="nvarchar" MaxLength="50" />
+          <Property Name="SchoolName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CasesAssault" Type="nvarchar" MaxLength="50" />
+          <Property Name="KnownAssailant" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssailantName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssailanKinship" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssailanGender" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssaultPhysical" Type="bit" />
+          <Property Name="AssaultSexual" Type="bit" />
+          <Property Name="AssaultVerbal" Type="bit" />
+          <Property Name="AssaultNeglecting" Type="bit" />
+          <Property Name="AssaultSpy" Type="bit" />
+          <Property Name="AssaultExploit" Type="bit" />
+          <Property Name="AssaultKidnapping" Type="bit" />
+          <Property Name="AssaultDate" Type="datetime" />
+          <Property Name="AssaultPlace" Type="nvarchar" MaxLength="100" />
+          <Property Name="AssaultReport" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssaultRepeatAttack" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssaultLevePain" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChildConvertingFoundation" Type="nvarchar" MaxLength="50" />
+          <Property Name="CenterName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Effects_break" Type="bit" />
+          <Property Name="Effects_Wounds" Type="bit" />
+          <Property Name="Effects_Bruising" Type="bit" />
+          <Property Name="Effects_Distortion" Type="bit" />
+          <Property Name="Effects_Burns" Type="bit" />
+          <Property Name="intimation_Parents" Type="bit" />
+          <Property Name="intimation_Police" Type="bit" />
+          <Property Name="intimation_Corporation" Type="bit" />
+          <Property Name="intimation_School" Type="bit" />
+          <Property Name="intimation_Friend" Type="bit" />
+          <Property Name="IncidentDescription" Type="nvarchar(max)" />
+          <Property Name="undesirable_Behavior" Type="nvarchar" MaxLength="50" />
+          <Property Name="RepeatBehavior" Type="nvarchar" MaxLength="50" />
+          <Property Name="foreman_For_behavior" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeBehavior" Type="nvarchar" MaxLength="50" />
+          <Property Name="Disorder_Behavioural" Type="bit" />
+          <Property Name="Disorder_Psychological" Type="bit" />
+          <Property Name="Disorder_Learn" Type="bit" />
+          <Property Name="Disorder_Pronounce" Type="bit" />
+          <Property Name="Disorder_Urination" Type="bit" />
+          <Property Name="Disorder_Sleep" Type="bit" />
+          <Property Name="Disorder_PositionsShocking" Type="bit" />
+          <Property Name="Disorder_Maltreatment" Type="bit" />
+          <Property Name="Disorder_SexualHarassment" Type="bit" />
+          <Property Name="Disorder_rape" Type="bit" />
+          <Property Name="Disorder_Resuscitatesexual" Type="bit" />
+          <Property Name="Recommendations" Type="ntext" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
+        <EntityType Name="Governorate_Table">
+          <Key>
+            <PropertyRef Name="GovernorateID" />
+          </Key>
+          <Property Name="GovernorateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GovernorateArName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProjectControl_Table">
+          <Key>
+            <PropertyRef Name="ProjectControlID" />
+          </Key>
+          <Property Name="ProjectControlID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="ProjectTable">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar(max)" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Session_Table">
+          <Key>
+            <PropertyRef Name="sessionID" />
+          </Key>
+          <Property Name="sessionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sessionDate" Type="datetime" />
+          <Property Name="sessionResult" Type="nvarchar(max)" />
+          <Property Name="sessionRecommendations" Type="nvarchar" MaxLength="50" />
+          <Property Name="CaseID" Type="int" />
+        </EntityType>
+        <EntityType Name="Users_Table">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Area_Table_Governorate_Table">
+          <End Role="Governorate_Table" Type="Self.Governorate_Table" Multiplicity="0..1" />
+          <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Governorate_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_Area_Table">
+          <End Role="Area_Table" Type="Self.Area_Table" Multiplicity="0..1" />
+          <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area_Table">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_Governorate_Table">
+          <End Role="Governorate_Table" Type="Self.Governorate_Table" Multiplicity="0..1" />
+          <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Governorate_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_ProjectTable">
+          <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="0..1" />
+          <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTable">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_Users_Table">
+          <End Role="Users_Table" Type="Self.Users_Table" Multiplicity="0..1" />
+          <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users_Table">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectControl_Table_ProjectTable">
+          <End Role="ProjectTable" Type="Self.ProjectTable" Multiplicity="0..1" />
+          <End Role="ProjectControl_Table" Type="Self.ProjectControl_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTable">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectControl_Table">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectControl_Table_Users_Table">
+          <End Role="Users_Table" Type="Self.Users_Table" Multiplicity="0..1" />
+          <End Role="ProjectControl_Table" Type="Self.ProjectControl_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users_Table">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ProjectControl_Table">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Session_Table_Case_Table">
+          <End Role="Case_Table" Type="Self.Case_Table" Multiplicity="0..1" />
+          <End Role="Session_Table" Type="Self.Session_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Case_Table">
+              <PropertyRef Name="CasesID" />
+            </Principal>
+            <Dependent Role="Session_Table">
+              <PropertyRef Name="CaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IndividualCounselingModelStoreContainer">
+          <EntitySet Name="Area_Table" EntityType="Self.Area_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Case_Table" EntityType="Self.Case_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Governorate_Table" EntityType="Self.Governorate_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectControl_Table" EntityType="Self.ProjectControl_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectTable" EntityType="Self.ProjectTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Session_Table" EntityType="Self.Session_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users_Table" EntityType="Self.Users_Table" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Area_Table_Governorate_Table" Association="Self.FK_Area_Table_Governorate_Table">
+            <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_Area_Table" Association="Self.FK_Case_Table_Area_Table">
+            <End Role="Area_Table" EntitySet="Area_Table" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_Governorate_Table" Association="Self.FK_Case_Table_Governorate_Table">
+            <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_ProjectTable" Association="Self.FK_Case_Table_ProjectTable">
+            <End Role="ProjectTable" EntitySet="ProjectTable" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_Users_Table" Association="Self.FK_Case_Table_Users_Table">
+            <End Role="Users_Table" EntitySet="Users_Table" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectControl_Table_ProjectTable" Association="Self.FK_ProjectControl_Table_ProjectTable">
+            <End Role="ProjectTable" EntitySet="ProjectTable" />
+            <End Role="ProjectControl_Table" EntitySet="ProjectControl_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectControl_Table_Users_Table" Association="Self.FK_ProjectControl_Table_Users_Table">
+            <End Role="Users_Table" EntitySet="Users_Table" />
+            <End Role="ProjectControl_Table" EntitySet="ProjectControl_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Session_Table_Case_Table" Association="Self.FK_Session_Table_Case_Table">
+            <End Role="Case_Table" EntitySet="Case_Table" />
+            <End Role="Session_Table" EntitySet="Session_Table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IndividualCounselingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IndividualCounselingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Area_Table" EntityType="IndividualCounselingModel.Area_Table" />
+          <EntitySet Name="Case_Table" EntityType="IndividualCounselingModel.Case_Table" />
+          <EntitySet Name="Governorate_Table" EntityType="IndividualCounselingModel.Governorate_Table" />
+          <EntitySet Name="ProjectControl_Table" EntityType="IndividualCounselingModel.ProjectControl_Table" />
+          <EntitySet Name="ProjectTable" EntityType="IndividualCounselingModel.ProjectTable" />
+          <EntitySet Name="Session_Table" EntityType="IndividualCounselingModel.Session_Table" />
+          <EntitySet Name="Users_Table" EntityType="IndividualCounselingModel.Users_Table" />
+          <AssociationSet Name="FK_Area_Table_Governorate_Table" Association="IndividualCounselingModel.FK_Area_Table_Governorate_Table">
+            <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+            <End Role="Area_Table" EntitySet="Area_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_Area_Table" Association="IndividualCounselingModel.FK_Case_Table_Area_Table">
+            <End Role="Area_Table" EntitySet="Area_Table" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_Governorate_Table" Association="IndividualCounselingModel.FK_Case_Table_Governorate_Table">
+            <End Role="Governorate_Table" EntitySet="Governorate_Table" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_ProjectTable" Association="IndividualCounselingModel.FK_Case_Table_ProjectTable">
+            <End Role="ProjectTable" EntitySet="ProjectTable" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Case_Table_Users_Table" Association="IndividualCounselingModel.FK_Case_Table_Users_Table">
+            <End Role="Users_Table" EntitySet="Users_Table" />
+            <End Role="Case_Table" EntitySet="Case_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Session_Table_Case_Table" Association="IndividualCounselingModel.FK_Session_Table_Case_Table">
+            <End Role="Case_Table" EntitySet="Case_Table" />
+            <End Role="Session_Table" EntitySet="Session_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectControl_Table_ProjectTable" Association="IndividualCounselingModel.FK_ProjectControl_Table_ProjectTable">
+            <End Role="ProjectTable" EntitySet="ProjectTable" />
+            <End Role="ProjectControl_Table" EntitySet="ProjectControl_Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectControl_Table_Users_Table" Association="IndividualCounselingModel.FK_ProjectControl_Table_Users_Table">
+            <End Role="Users_Table" EntitySet="Users_Table" />
+            <End Role="ProjectControl_Table" EntitySet="ProjectControl_Table" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Area_Table">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaArName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AreaEnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GovernorateID" Type="Int32" />
+          <NavigationProperty Name="Governorate_Table" Relationship="IndividualCounselingModel.FK_Area_Table_Governorate_Table" FromRole="Area_Table" ToRole="Governorate_Table" />
+          <NavigationProperty Name="Case_Table" Relationship="IndividualCounselingModel.FK_Case_Table_Area_Table" FromRole="Area_Table" ToRole="Case_Table" />
+        </EntityType>
+        <EntityType Name="Case_Table">
+          <Key>
+            <PropertyRef Name="CasesID" />
+          </Key>
+          <Property Name="CasesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CasesNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CasesDate" Type="DateTime" Precision="3" />
+          <Property Name="CasesStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CasesName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CasesGender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CasesAge" Type="Int32" />
+          <Property Name="CasesCitizen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudyFather" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudyMother" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FatherWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MotherWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentsRelationship" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EconomicLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CasesMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrothersNumber" Type="Int32" />
+          <Property Name="MaleNumber" Type="Int32" />
+          <Property Name="FemalNumber" Type="Int32" />
+          <Property Name="CasesSorted" Type="Int32" />
+          <Property Name="Childlives" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChildLivesWith" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GovernorateID" Type="Int32" />
+          <Property Name="AreaID" Type="Int32" />
+          <Property Name="AreasRating" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CasesAdress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChildStudy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EducationalLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CasesAssault" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KnownAssailant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssailantName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssailanKinship" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssailanGender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssaultPhysical" Type="Boolean" Nullable="false" />
+          <Property Name="AssaultSexual" Type="Boolean" Nullable="false" />
+          <Property Name="AssaultVerbal" Type="Boolean" Nullable="false" />
+          <Property Name="AssaultNeglecting" Type="Boolean" Nullable="false" />
+          <Property Name="AssaultSpy" Type="Boolean" Nullable="false" />
+          <Property Name="AssaultExploit" Type="Boolean" Nullable="false" />
+          <Property Name="AssaultKidnapping" Type="Boolean" Nullable="false" />
+          <Property Name="AssaultDate" Type="DateTime" Precision="3" />
+          <Property Name="AssaultPlace" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AssaultReport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssaultRepeatAttack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssaultLevePain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChildConvertingFoundation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CenterName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Effects_break" Type="Boolean" Nullable="false" />
+          <Property Name="Effects_Wounds" Type="Boolean" Nullable="false" />
+          <Property Name="Effects_Bruising" Type="Boolean" Nullable="false" />
+          <Property Name="Effects_Distortion" Type="Boolean" Nullable="false" />
+          <Property Name="Effects_Burns" Type="Boolean" Nullable="false" />
+          <Property Name="intimation_Parents" Type="Boolean" Nullable="false" />
+          <Property Name="intimation_Police" Type="Boolean" Nullable="false" />
+          <Property Name="intimation_Corporation" Type="Boolean" Nullable="false" />
+          <Property Name="intimation_School" Type="Boolean" Nullable="false" />
+          <Property Name="intimation_Friend" Type="Boolean" Nullable="false" />
+          <Property Name="IncidentDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="undesirable_Behavior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RepeatBehavior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="foreman_For_behavior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeBehavior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Disorder_Behavioural" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_Psychological" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_Learn" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_Pronounce" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_Urination" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_Sleep" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_PositionsShocking" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_Maltreatment" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_SexualHarassment" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_rape" Type="Boolean" Nullable="false" />
+          <Property Name="Disorder_Resuscitatesexual" Type="Boolean" Nullable="false" />
+          <Property Name="Recommendations" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="Area_Table" Relationship="IndividualCounselingModel.FK_Case_Table_Area_Table" FromRole="Case_Table" ToRole="Area_Table" />
+          <NavigationProperty Name="Governorate_Table" Relationship="IndividualCounselingModel.FK_Case_Table_Governorate_Table" FromRole="Case_Table" ToRole="Governorate_Table" />
+          <NavigationProperty Name="ProjectTable" Relationship="IndividualCounselingModel.FK_Case_Table_ProjectTable" FromRole="Case_Table" ToRole="ProjectTable" />
+          <NavigationProperty Name="Users_Table" Relationship="IndividualCounselingModel.FK_Case_Table_Users_Table" FromRole="Case_Table" ToRole="Users_Table" />
+          <NavigationProperty Name="Session_Table" Relationship="IndividualCounselingModel.FK_Session_Table_Case_Table" FromRole="Case_Table" ToRole="Session_Table" />
+        </EntityType>
+        <EntityType Name="Governorate_Table">
+          <Key>
+            <PropertyRef Name="GovernorateID" />
+          </Key>
+          <Property Name="GovernorateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GovernorateArName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Area_Table" Relationship="IndividualCounselingModel.FK_Area_Table_Governorate_Table" FromRole="Governorate_Table" ToRole="Area_Table" />
+          <NavigationProperty Name="Case_Table" Relationship="IndividualCounselingModel.FK_Case_Table_Governorate_Table" FromRole="Governorate_Table" ToRole="Case_Table" />
+        </EntityType>
+        <EntityType Name="ProjectControl_Table">
+          <Key>
+            <PropertyRef Name="ProjectControlID" />
+          </Key>
+          <Property Name="ProjectControlID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProjectTable" Relationship="IndividualCounselingModel.FK_ProjectControl_Table_ProjectTable" FromRole="ProjectControl_Table" ToRole="ProjectTable" />
+          <NavigationProperty Name="Users_Table" Relationship="IndividualCounselingModel.FK_ProjectControl_Table_Users_Table" FromRole="ProjectControl_Table" ToRole="Users_Table" />
+        </EntityType>
+        <EntityType Name="ProjectTable">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Case_Table" Relationship="IndividualCounselingModel.FK_Case_Table_ProjectTable" FromRole="ProjectTable" ToRole="Case_Table" />
+          <NavigationProperty Name="ProjectControl_Table" Relationship="IndividualCounselingModel.FK_ProjectControl_Table_ProjectTable" FromRole="ProjectTable" ToRole="ProjectControl_Table" />
+        </EntityType>
+        <EntityType Name="Session_Table">
+          <Key>
+            <PropertyRef Name="sessionID" />
+          </Key>
+          <Property Name="sessionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sessionDate" Type="DateTime" Precision="3" />
+          <Property Name="sessionResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sessionRecommendations" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CaseID" Type="Int32" />
+          <NavigationProperty Name="Case_Table" Relationship="IndividualCounselingModel.FK_Session_Table_Case_Table" FromRole="Session_Table" ToRole="Case_Table" />
+        </EntityType>
+        <EntityType Name="Users_Table">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Case_Table" Relationship="IndividualCounselingModel.FK_Case_Table_Users_Table" FromRole="Users_Table" ToRole="Case_Table" />
+          <NavigationProperty Name="ProjectControl_Table" Relationship="IndividualCounselingModel.FK_ProjectControl_Table_Users_Table" FromRole="Users_Table" ToRole="ProjectControl_Table" />
+        </EntityType>
+        <Association Name="FK_Area_Table_Governorate_Table">
+          <End Type="IndividualCounselingModel.Governorate_Table" Role="Governorate_Table" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.Area_Table" Role="Area_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Governorate_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Principal>
+            <Dependent Role="Area_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_Area_Table">
+          <End Type="IndividualCounselingModel.Area_Table" Role="Area_Table" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.Case_Table" Role="Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area_Table">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_Governorate_Table">
+          <End Type="IndividualCounselingModel.Governorate_Table" Role="Governorate_Table" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.Case_Table" Role="Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Governorate_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="GovernorateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_ProjectTable">
+          <End Type="IndividualCounselingModel.ProjectTable" Role="ProjectTable" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.Case_Table" Role="Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTable">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Case_Table_Users_Table">
+          <End Type="IndividualCounselingModel.Users_Table" Role="Users_Table" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.Case_Table" Role="Case_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users_Table">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Case_Table">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Session_Table_Case_Table">
+          <End Type="IndividualCounselingModel.Case_Table" Role="Case_Table" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.Session_Table" Role="Session_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Case_Table">
+              <PropertyRef Name="CasesID" />
+            </Principal>
+            <Dependent Role="Session_Table">
+              <PropertyRef Name="CaseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectControl_Table_ProjectTable">
+          <End Type="IndividualCounselingModel.ProjectTable" Role="ProjectTable" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.ProjectControl_Table" Role="ProjectControl_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTable">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectControl_Table">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectControl_Table_Users_Table">
+          <End Type="IndividualCounselingModel.Users_Table" Role="Users_Table" Multiplicity="0..1" />
+          <End Type="IndividualCounselingModel.ProjectControl_Table" Role="ProjectControl_Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users_Table">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ProjectControl_Table">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IndividualCounselingModelStoreContainer" CdmEntityContainer="IndividualCounselingEntities">
+          <EntitySetMapping Name="Area_Table">
+            <EntityTypeMapping TypeName="IndividualCounselingModel.Area_Table">
+              <MappingFragment StoreEntitySet="Area_Table">
+                <ScalarProperty Name="GovernorateID" ColumnName="GovernorateID" />
+                <ScalarProperty Name="AreaEnName" ColumnName="AreaEnName" />
+                <ScalarProperty Name="AreaArName" ColumnName="AreaArName" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Case_Table">
+            <EntityTypeMapping TypeName="IndividualCounselingModel.Case_Table">
+              <MappingFragment StoreEntitySet="Case_Table">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+                <ScalarProperty Name="Disorder_Resuscitatesexual" ColumnName="Disorder_Resuscitatesexual" />
+                <ScalarProperty Name="Disorder_rape" ColumnName="Disorder_rape" />
+                <ScalarProperty Name="Disorder_SexualHarassment" ColumnName="Disorder_SexualHarassment" />
+                <ScalarProperty Name="Disorder_Maltreatment" ColumnName="Disorder_Maltreatment" />
+                <ScalarProperty Name="Disorder_PositionsShocking" ColumnName="Disorder_PositionsShocking" />
+                <ScalarProperty Name="Disorder_Sleep" ColumnName="Disorder_Sleep" />
+                <ScalarProperty Name="Disorder_Urination" ColumnName="Disorder_Urination" />
+                <ScalarProperty Name="Disorder_Pronounce" ColumnName="Disorder_Pronounce" />
+                <ScalarProperty Name="Disorder_Learn" ColumnName="Disorder_Learn" />
+                <ScalarProperty Name="Disorder_Psychological" ColumnName="Disorder_Psychological" />
+                <ScalarProperty Name="Disorder_Behavioural" ColumnName="Disorder_Behavioural" />
+                <ScalarProperty Name="TimeBehavior" ColumnName="TimeBehavior" />
+                <ScalarProperty Name="foreman_For_behavior" ColumnName="foreman_For_behavior" />
+                <ScalarProperty Name="RepeatBehavior" ColumnName="RepeatBehavior" />
+                <ScalarProperty Name="undesirable_Behavior" ColumnName="undesirable_Behavior" />
+                <ScalarProperty Name="IncidentDescription" ColumnName="IncidentDescription" />
+                <ScalarProperty Name="intimation_Friend" ColumnName="intimation_Friend" />
+                <ScalarProperty Name="intimation_School" ColumnName="intimation_School" />
+                <ScalarProperty Name="intimation_Corporation" ColumnName="intimation_Corporation" />
+                <ScalarProperty Name="intimation_Police" ColumnName="intimation_Police" />
+                <ScalarProperty Name="intimation_Parents" ColumnName="intimation_Parents" />
+                <ScalarProperty Name="Effects_Burns" ColumnName="Effects_Burns" />
+                <ScalarProperty Name="Effects_Distortion" ColumnName="Effects_Distortion" />
+                <ScalarProperty Name="Effects_Bruising" ColumnName="Effects_Bruising" />
+                <ScalarProperty Name="Effects_Wounds" ColumnName="Effects_Wounds" />
+                <ScalarProperty Name="Effects_break" ColumnName="Effects_break" />
+                <ScalarProperty Name="CenterName" ColumnName="CenterName" />
+                <ScalarProperty Name="ChildConvertingFoundation" ColumnName="ChildConvertingFoundation" />
+                <ScalarProperty Name="AssaultLevePain" ColumnName="AssaultLevePain" />
+                <ScalarProperty Name="AssaultRepeatAttack" ColumnName="AssaultRepeatAttack" />
+                <ScalarProperty Name="AssaultReport" ColumnName="AssaultReport" />
+                <ScalarProperty Name="AssaultPlace" ColumnName="AssaultPlace" />
+                <ScalarProperty Name="AssaultDate" ColumnName="AssaultDate" />
+                <ScalarProperty Name="AssaultKidnapping" ColumnName="AssaultKidnapping" />
+                <ScalarProperty Name="AssaultExploit" ColumnName="AssaultExploit" />
+                <ScalarProperty Name="AssaultSpy" ColumnName="AssaultSpy" />
+                <ScalarProperty Name="AssaultNeglecting" ColumnName="AssaultNeglecting" />
+                <ScalarProperty Name="AssaultVerbal" ColumnName="AssaultVerbal" />
+                <ScalarProperty Name="AssaultSexual" ColumnName="AssaultSexual" />
+                <ScalarProperty Name="AssaultPhysical" ColumnName="AssaultPhysical" />
+                <ScalarProperty Name="AssailanGender" ColumnName="AssailanGender" />
+                <ScalarProperty Name="AssailanKinship" ColumnName="AssailanKinship" />
+                <ScalarProperty Name="AssailantName" ColumnName="AssailantName" />
+                <ScalarProperty Name="KnownAssailant" ColumnName="KnownAssailant" />
+                <ScalarProperty Name="CasesAssault" ColumnName="CasesAssault" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+                <ScalarProperty Name="EducationalLevel" ColumnName="EducationalLevel" />
+                <ScalarProperty Name="ChildStudy" ColumnName="ChildStudy" />
+                <ScalarProperty Name="CasesAdress" ColumnName="CasesAdress" />
+                <ScalarProperty Name="AreasRating" ColumnName="AreasRating" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="GovernorateID" ColumnName="GovernorateID" />
+                <ScalarProperty Name="ChildLivesWith" ColumnName="ChildLivesWith" />
+                <ScalarProperty Name="Childlives" ColumnName="Childlives" />
+                <ScalarProperty Name="CasesSorted" ColumnName="CasesSorted" />
+                <ScalarProperty Name="FemalNumber" ColumnName="FemalNumber" />
+                <ScalarProperty Name="MaleNumber" ColumnName="MaleNumber" />
+                <ScalarProperty Name="BrothersNumber" ColumnName="BrothersNumber" />
+                <ScalarProperty Name="CasesMobile" ColumnName="CasesMobile" />
+                <ScalarProperty Name="EconomicLevel" ColumnName="EconomicLevel" />
+                <ScalarProperty Name="ParentsRelationship" ColumnName="ParentsRelationship" />
+                <ScalarProperty Name="ParentalStatus" ColumnName="ParentalStatus" />
+                <ScalarProperty Name="MotherWork" ColumnName="MotherWork" />
+                <ScalarProperty Name="FatherWork" ColumnName="FatherWork" />
+                <ScalarProperty Name="StudyMother" ColumnName="StudyMother" />
+                <ScalarProperty Name="StudyFather" ColumnName="StudyFather" />
+                <ScalarProperty Name="CasesCitizen" ColumnName="CasesCitizen" />
+                <ScalarProperty Name="CasesAge" ColumnName="CasesAge" />
+                <ScalarProperty Name="CasesGender" ColumnName="CasesGender" />
+                <ScalarProperty Name="CasesName" ColumnName="CasesName" />
+                <ScalarProperty Name="CasesStatus" ColumnName="CasesStatus" />
+                <ScalarProperty Name="CasesDate" ColumnName="CasesDate" />
+                <ScalarProperty Name="CasesNumber" ColumnName="CasesNumber" />
+                <ScalarProperty Name="CasesID" ColumnName="CasesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Governorate_Table">
+            <EntityTypeMapping TypeName="IndividualCounselingModel.Governorate_Table">
+              <MappingFragment StoreEntitySet="Governorate_Table">
+                <ScalarProperty Name="GovernorateArName" ColumnName="GovernorateArName" />
+                <ScalarProperty Name="GovernorateID" ColumnName="GovernorateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectControl_Table">
+            <EntityTypeMapping TypeName="IndividualCounselingModel.ProjectControl_Table">
+              <MappingFragment StoreEntitySet="ProjectControl_Table">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ProjectControlID" ColumnName="ProjectControlID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectTable">
+            <EntityTypeMapping TypeName="IndividualCounselingModel.ProjectTable">
+              <MappingFragment StoreEntitySet="ProjectTable">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Session_Table">
+            <EntityTypeMapping TypeName="IndividualCounselingModel.Session_Table">
+              <MappingFragment StoreEntitySet="Session_Table">
+                <ScalarProperty Name="CaseID" ColumnName="CaseID" />
+                <ScalarProperty Name="sessionRecommendations" ColumnName="sessionRecommendations" />
+                <ScalarProperty Name="sessionResult" ColumnName="sessionResult" />
+                <ScalarProperty Name="sessionDate" ColumnName="sessionDate" />
+                <ScalarProperty Name="sessionID" ColumnName="sessionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users_Table">
+            <EntityTypeMapping TypeName="IndividualCounselingModel.Users_Table">
+              <MappingFragment StoreEntitySet="Users_Table">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title> نظام حالات الارشاد الفردي</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN CORE CSS FRAMEWORK -->
+    <!-- END CORE CSS FRAMEWORK -->
+    <!-- BEGIN CSS TEMPLATE -->
+
+    <link href="@Url.Content("~/Content/assets/plugins/pace/pace-theme-flash.css")" rel="stylesheet" type="text/css" media="screen" />
+    <link href="@Url.Content("~/Content/assets/plugins/jquery-scrollbar/jquery.scrollbar.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/plugins/boostrapv3/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/plugins/boostrapv3/css/bootstrap-theme.min.css")" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Content/assets/plugins/font-awesome/css/font-awesome.css")
+    <link href="@Url.Content("~/Content/assets/css/animate.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/rtl/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/rtl/responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/custom-icon-set.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.rtl.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/styles/kendo.dataviz.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/jszip.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+
+
+    <script>
+    kendo.culture("en-GB");
+    </script>
+</head>
+<body class="rtl">
+
+    <script src="@Url.Content("~/Scripts/cultures/kendo.culture.en-GB.min.js")"></script>
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+        <div class="navbar-inner">
+            <!-- BEGIN NAVIGATION HEADER -->
+            <div class="header-seperation">
+                <!-- BEGIN MOBILE HEADER -->
+                <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
+                    <li class="dropdown">
+                        <a id="main-menu-toggle" href="#main-menu" class="">
+                            <div class="iconset top-menu-toggle-white"></div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- END MOBILE HEADER -->
+                <!-- BEGIN LOGO -->
+                <a href="#">
+                </a>
+                <!-- END LOGO -->
+                <h3 style="color:white;text-align:center">PCDCR</h3>
+                <!-- BEGIN LOGO NAV BUTTONS -->
+                <ul class="nav pull-right notifcation-center">
+                    <li class="dropdown" id="header_task_bar">
+                        <a href="#" class="dropdown-toggle active" data-toggle="">
+                            <div class="iconset top-home"></div>
+                        </a>
+                    </li>
+
+
+                </ul>
+                <!-- END LOGO NAV BUTTONS -->
+            </div>
+            <!-- END NAVIGATION HEADER -->
+            <!-- BEGIN CONTENT HEADER -->
+            <div class="header-quick-nav">
+                <!-- BEGIN HEADER LEFT SIDE SECTION -->
+                <div class="pull-left">
+                    <!-- BEGIN SLIM NAVIGATION TOGGLE -->
+                    <ul class="nav quick-section">
+                        <li class="quicklinks">
+                            <a href="#" class="" id="layout-condensed-toggle">
+                                <div class="iconset top-menu-toggle-dark"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- END SLIM NAVIGATION TOGGLE -->
+                    <!-- BEGIN HEADER QUICK LINKS -->
+                    <ul class="nav quick-section">
+                        <li class="quicklinks"><a href="#" class=""><div class="iconset top-reload"></div></a></li>
+                        <li class="quicklinks"><span class="h-seperate"></span></li>
+                        <li class="quicklinks"><a href="#" class=""><div class="iconset top-tiles"></div></a></li>
+
+                    </ul>
+                    <!-- BEGIN HEADER QUICK LINKS -->
+                </div>
+                <!-- END HEADER LEFT SIDE SECTION -->
+                <!-- BEGIN HEADER RIGHT SIDE SECTION -->
+                <div class="pull-right">
+                    <div class="chat-toggler">
+                        <!-- BEGIN NOTIFICATION CENTER -->
+                        <div class="user-details">
+                            <div class="username">
+                                <span class="badge badge-important">@Session["UserName"] </span>
+                            </div>
+                        </div>
+                        <div class="iconset top-down-arrow"></div>
+
+                        <div id="notification-list" style="display:none">
+                            <div style="width:300px">
+
+                            </div>
+                        </div>
+                        <!-- END NOTIFICATION CENTER -->
+                        <!-- BEGIN PROFILE PICTURE -->
+                        <div class="profile-pic">
+                            <img src="@Url.Content("~/Content/assets/img/profiles/avatar_small.jpg")" alt="" data-src="@Url.Content("~/Content/assets/img/profiles/avatar_small.jpg")" data-src-retina="@Url.Content("~/Content/assets/img/profiles/avatar_small2x.jpg")" width="35" height="35" />
+                        </div>
+                        <!-- END PROFILE PICTURE -->
+                    </div>
+                    <!-- BEGIN HEADER NAV BUTTONS -->
+                    <ul class="nav quick-section">
+                        <!-- BEGIN SETTINGS -->
+                        <li class="quicklinks">
+                            <a data-toggle="dropdown" class="dropdown-toggle pull-right" href="#" id="user-options">
+                                <div class="iconset top-settings-dark"></div>
+                            </a>
+                            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="user-options">
+
+
+                                <li class="">
+                                    <a href="@Url.Action("LogOff", "Account")" class="elements">
+                                        <i class="fa fa-power-off"></i>
+                                        <span class="title">خروج</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END SETTINGS -->
+                        <li class="quicklinks"><span class="h-seperate"></span></li>
+                        <!-- BEGIN CHAT SIDEBAR TOGGLE -->
+                        <!-- END CHAT SIDEBAR TOGGLE -->
+                    </ul>
+                    <!-- END HEADER NAV BUTTONS -->
+                </div>
+                <!-- END HEADER RIGHT SIDE SECTION -->
+            </div>
+            <!-- END CONTENT HEADER -->
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-container row-fluid">
+        <!-- BEGIN SIDEBAR -->
+        <!-- BEGIN MENU -->
+        <div class="page-sidebar" id="main-menu">
+            <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+                <!-- BEGIN MINI-PROFILE -->
+                <div class="user-info-wrapper">
+                    <div class="profile-wrapper">
+                        <img src="@Url.Content("~/Content/assets/img/profiles/avatar.jpg")" alt="" data-src="@Url.Content("~/Content/assets/img/profiles/avatar.jpg")" data-src-retina="@Url.Content("~/Content/assets/img/profiles/avatar2x.jpg")" width="69" height="69" />
+
+                    </div>
+                    <div class="user-info">
+                        <div class="greeting">مرحبا</div>
+                        <div class="username">@Session["UserName"] </div>
+
+                        <div class="status">
+                            الحالة<a href="#">
+                                <div class="status-icon green"></div>
+                                متصل
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MINI-PROFILE -->
+                <!-- BEGIN SIDEBAR MENU -->
+                <ul>
+                    <!-- BEGIN SELECTED LINK -->
+                    <li class="start active">
+                        <a href="@Url.Action("Index", "Home")" class="elements">
+                            <i class="icon-custom-home"></i>
+                            <span class="title">الرئيسية</span>
+
+                        </a>
+                    </li>
+                    <!-- END SELECTED LINK -->
+                    <!-- BEGIN BADGE LINK -->
+@{
+    // Abu Ehab :
+    // Extract Number From Like and pass it to SitutionId At Controller
+    string currentUrlPage = HttpContext.Current.Request.Url.PathAndQuery;
+
+    string[] words = currentUrlPage.Split('=');
+    string s = "";
+    foreach (string word in words)
+    {
+        s = word.ToString();
+    }
+
+    int x = int.Parse(s);
+
+                    <li class="">
+                        <a href="@Url.Action("CasesMnagement", "Cases", new { ProID = x })" class="elements">
+                            <i class="fa fa-users"></i>
+                            <span class="title">إدارة الحالات</span>
+                        </a>
+                    </li>
+                    if ((string)Session["UserType"] == ("مدير"))
+                    {
+                    <li class="">
+                        <a href="@Url.Action("Report", "Report", new { ProID = x })" class="elements">
+                            <i class="fa fa-folder"></i>
+                            <span class="title">التقرير</span>
+                        </a>
+                    </li>
+
+       
+    }
+
+                    }
+
+
+
+
+
+
+
+                    <!-- END ONE LEVEL MENU -->
+                    <!-- BEGIN TWO LEVEL MENU -->
+                    <!-- END TWO LEVEL MENU -->
+                </ul>
+                <!-- END SIDEBAR MENU -->
+                <!-- BEGIN SIDEBAR WIDGETS -->
+                <div class="side-bar-widgets">
+
+                    <!-- END PROJECTS WIDGET -->
+                </div>
+                <div class="clearfix"></div>
+                <!-- END SIDEBAR WIDGETS -->
+            </div>
+        </div>
+        <!-- BEGIN SCROLL UP HOVER -->
+        <a href="#" class="scrollup">Scroll</a>
+        <!-- END SCROLL UP HOVER -->
+        <!-- END MENU -->
+        <!-- BEGIN SIDEBAR FOOTER WIDGET -->
+        <div class="footer-widget">
+
+            <div class="pull-right">
+
+
+
+
+                <a href="@Url.Action("LogOff", "Account")" class="elements">
+                    <i class="fa fa-power-off"></i>
+                    <span class="title">خروج</span>
+                </a>
+            </div>
+        </div>
+        <!-- END SIDEBAR FOOTER WIDGET -->
+        <!-- END SIDEBAR -->
+        <!-- BEGIN PAGE CONTAINER-->
+        <div class="page-content">
+            <div class="content">
+                <!-- BEGIN PAGE TITLE -->
+
+
+
+                @if (Session["UserId"] != null)
+                {
+                    <div class="k-rtl">
+                        @RenderSection("featured", required: false)
+                        <section class="content-wrapper main-content clear-fix">
+                            @RenderBody()
+                        </section>
+
+
+
+                    </div>
+                }
+                else {
+
+                    Response.Redirect("~/Account/Login");
+
+
+                }
+
+
+                <!-- END PAGE TITLE -->
+                <!-- BEGIN PlACE PAGE CONTENT HERE -->
+                <!-- END PLACE PAGE CONTENT HERE -->
+            </div>
+        </div>
+        <!-- END PAGE CONTAINER -->
+        <!-- BEGIN CHAT -->
+        <!-- END CHAT -->
+    </div>
+    <!-- END CONTENT -->
+    <!-- BEGIN CORE JS FRAMEWORK-->
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/boostrapv3/js/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/breakpoints.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-unveil/jquery.unveil.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-block-ui/jqueryblockui.js")" type="text/javascript"></script>
+    <!-- END CORE JS FRAMEWORK -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/pace/pace.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-sparkline/jquery-sparkline.js")"></script>
+
+
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="@Url.Content("~/Content/assets/js/core.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/js/chat.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/js/demo.js")" type="text/javascript"></script>
+
+
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- END CORE TEMPLATE JS -->
+    <!-- END NEED TO WORK ON -->
+</body>
+</html>

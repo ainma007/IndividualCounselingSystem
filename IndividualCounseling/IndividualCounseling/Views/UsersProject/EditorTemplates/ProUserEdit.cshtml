@@ -1,0 +1,84 @@
+﻿@model IndividualCounseling.Models.ProjectControl.ProjectControlViewModel
+
+<style type="text/css">
+    div.k-edit-form-container {
+        width: 80%;
+    }
+
+        div.k-edit-form-container div.editor-field textarea, input.k-textbox {
+            width: 100%;
+            max-width: none;
+        }
+</style>
+
+<div class="k-edit-form-container" style="margin:auto;">
+
+    <div class="row">
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.ProID)
+
+            @(Html.Kendo().DropDownListFor(model => model.ProID)
+          .HtmlAttributes(new { style = "width: 100%;" })
+          .DataTextField("ProjectName")
+          .DataValueField("ProjectID")
+          .Filter("contains")
+          .DataSource(source =>
+          {
+              source.Read(read =>
+              {
+                  read.Action("GetProject", "UsersProject");
+              })
+              .ServerFiltering(false);
+          })
+            )
+            @Html.ValidationMessageFor(model => model.ProID)
+
+
+
+
+        </div>
+
+
+      
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserID)
+@(Html.Kendo().DropDownListFor(model => model.UserID)
+          .HtmlAttributes(new { style = "width: 100%;" })
+          .DataTextField("FullName")
+          .DataValueField("UserID")
+          .Filter("contains")
+          .DataSource(source =>
+          {
+              source.Read(read =>
+              {
+                  read.Action("getUsers", "UsersProject");
+              })
+              .ServerFiltering(false);
+          })
+)
+@Html.ValidationMessageFor(model => model.UserID)
+
+
+            </div>
+
+
+        <div class="form-group">
+
+
+            @Html.ValidationMessageFor(model => model.UserID)
+
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status)
+
+
+            @Html.CheckBoxFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        </div>
+
+    </div>

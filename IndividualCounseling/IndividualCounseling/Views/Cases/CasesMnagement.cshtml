@@ -1,0 +1,240 @@
+﻿@using IndividualCounseling.Models.Cases
+@{
+    ViewBag.Title = "CasesMnagement";
+    Layout = "~/Views/Shared/Cases_LayoutPage.cshtml";
+}
+
+<script>
+    kendo.culture("en-GB");
+</script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="grid simple ">
+            <div class="grid-title no-border">
+                <div class="page-title">
+                    <i class="icon-custom-left"></i>
+                    <h3>ادارة - <span class="semi-bold"> الحالات الفردية</span></h3>
+                    <h3>مشروع - <span class="semi-bold"> @ViewBag.ProjectName </span></h3>
+                </div>
+            </div>
+            <div class="grid-body no-border">
+@if (Session["UserType"].Equals("مدير"))
+{
+                @(Html.Kendo().Grid<CasesViewModel>()
+.Name("grid")
+.Columns(columns =>
+{
+    columns.Bound(p => p.CasesID).Width(50).Title("رقم ").Hidden();
+    columns.Bound(p => p.CasesNumber).Width(150).HeaderHtmlAttributes(new { @title = "رقم الحالة" }).Title("رقم الحالة").Locked(true); ;
+
+    columns.Bound(p => p.CasesName).Width(200).HeaderHtmlAttributes(new { @title = "اسم الحالة" }).Title("اسم الحالة").Locked(true);
+    columns.Bound(p => p.CasesDate).Width(170).HeaderHtmlAttributes(new { @title = "تاريخ الحالة  " }).Format("{0:dd/MM/yyyy}").Title("تاريخ الحالة ");
+    columns.Bound(p => p.CasesGender).Width(170).HeaderHtmlAttributes(new { @title = "الجنس" }).Title("الجنس");
+    columns.Bound(p => p.CasesAge).Width(170).HeaderHtmlAttributes(new { @title = "العمر" }).Title("العمر");
+
+
+    columns.ForeignKey(p => p.GovernorateID, (System.Collections.IEnumerable)ViewData["Governorate"], "GovernorateID", "GovernorateName")
+    .Title("المحافظة").Width(200);
+    columns.ForeignKey(p => p.AreaID, (System.Collections.IEnumerable)ViewData["Area"], "AreaID", "AreaName")
+    .Title("المنطقة").Width(200);
+    columns.Bound(p => p.CasesAssault).Width(200).HeaderHtmlAttributes(new { @title = "يوجد اعتداء" }).Title("يوجد اعتداء");
+
+    columns.Bound(p => p.CasesStatus).Width(200).HeaderHtmlAttributes(new { @title = "وضع الحالة" }).Title("وضع الحالة");
+
+
+    columns.ForeignKey(p => p.UserID, (System.Collections.IEnumerable)ViewData["users"], "UserID", "FullName")
+    .Title("مدخل البيانات").Width(200);
+
+    columns.Command(command => command.Custom("الدخول للجلسات").Click("showDetails")).Width(180);
+
+
+    columns.Command(command => { command.Edit().Text("تعديل"); command.Destroy().Text("حذف"); }).Width(200);
+})
+.ToolBar(toolBar =>
+{
+    toolBar.Create().Text("اضافة حالة جديد");
+})
+.Editable(editable => editable.Mode(GridEditMode.PopUp).Window(w => w.Title(" بيانات الحالة").Width(800).Height(600)).TemplateName("CasesEdit"))
+.Events(e => e.Edit("onEdit"))
+.Selectable(selectable => selectable
+    .Mode(GridSelectionMode.Multiple))
+   .Pageable()
+.Sortable()
+.Scrollable()
+.Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+.HtmlAttributes(new { style = "height:550px;" })
+.DataSource(dataSource => dataSource
+.Ajax()
+.PageSize(1000)
+.ServerOperation(false)
+.Events(events => events.Error("errorHandler"))
+
+
+.Model(model =>
+{
+    model.Id(p => p.CasesID);
+    model.Field(p => p.CasesID).Editable(false);
+    model.Field(p => p.GovernorateID).DefaultValue(1);
+    model.Field(p => p.AreaID).DefaultValue(1);
+    model.Field(p => p.UserID).DefaultValue(int.Parse(Session["UserID"].ToString()));
+    model.Field(p => p.CasesAssault).DefaultValue("لا");
+
+
+
+    string currentUrlPage = HttpContext.Current.Request.Url.PathAndQuery;
+
+    string[] words = currentUrlPage.Split('=');
+    string s = "";
+    foreach (string word in words)
+    {
+        s = word.ToString();
+    }
+    int x = int.Parse(s);
+    model.Field(p => p.ProID).DefaultValue(x);
+
+
+
+
+})
+.Read(read => read.Action("Cases_Read", "Cases"))
+.Update(update => update.Action("Cases_Update", "Cases"))
+.Create(create => create.Action("Cases_Create", "Cases"))
+.Destroy(destroy => destroy.Action("Casess_Destroy", "Cases"))
+)
+                )
+
+}
+
+else
+{
+    @(Html.Kendo().Grid<CasesViewModel>()
+.Name("grid")
+.Columns(columns =>
+{
+    columns.Bound(p => p.CasesID).Width(50).Title("رقم ").Hidden();
+    columns.Bound(p => p.CasesNumber).Width(150).HeaderHtmlAttributes(new { @title = "رقم الحالة" }).Title("رقم الحالة");
+
+    columns.Bound(p => p.CasesName).Width(200).HeaderHtmlAttributes(new { @title = "اسم الحالة" }).Title("اسم الحالة");
+    columns.Bound(p => p.CasesDate).Width(170).HeaderHtmlAttributes(new { @title = "التاريخ  " }).Format("{0:dd/MM/yyyy}").Title("تاريخ البداية ");
+    columns.Bound(p => p.CasesGender).Width(170).HeaderHtmlAttributes(new { @title = "الجنس" }).Title("الجنس");
+
+    columns.ForeignKey(p => p.GovernorateID, (System.Collections.IEnumerable)ViewData["Governorate"], "GovernorateID", "GovernorateName")
+    .Title("المحافظة").Width(200);
+    columns.ForeignKey(p => p.AreaID, (System.Collections.IEnumerable)ViewData["Area"], "AreaID", "AreaName")
+    .Title("المنطقة").Width(200);
+    columns.Bound(p => p.CasesAssault).Width(200).HeaderHtmlAttributes(new { @title = "يوجد اعتداء" }).Title("يوجد اعتداء");
+    columns.Bound(p => p.CasesStatus).Width(200).HeaderHtmlAttributes(new { @title = "وضع الحالة" }).Title("وضع الحالة");
+
+
+    columns.ForeignKey(p => p.UserID, (System.Collections.IEnumerable)ViewData["users"], "UserID", "FullName")
+    .Title("مدخل البيانات").Width(200);
+
+    columns.Command(command => command.Custom("الدخول للجلسات").Click("showDetails")).Width(180);
+
+
+    columns.Command(command => { command.Edit().Text("تعديل"); command.Destroy().Text("حذف"); }).Width(200);
+})
+.ToolBar(toolBar =>
+{
+    toolBar.Create().Text("اضافة حالة جديد");
+})
+.Editable(editable => editable.Mode(GridEditMode.PopUp).Window(w => w.Title(" بيانات الحالة").Width(800).Height(600)).TemplateName("CasesEdit"))
+.Events(e => e.Edit("onEdit"))
+.Selectable(selectable => selectable
+    .Mode(GridSelectionMode.Multiple))
+   .Pageable()
+.Sortable()
+.Scrollable()
+.Filterable(ftb => ftb.Mode(GridFilterMode.Row))
+.HtmlAttributes(new { style = "height:550px;" })
+.DataSource(dataSource => dataSource
+.Ajax()
+.PageSize(150)
+.ServerOperation(false)
+.Events(events => events.Error("errorHandler"))
+
+
+.Model(model =>
+{
+    model.Id(p => p.CasesID);
+    model.Field(p => p.CasesID).Editable(false);
+    model.Field(p => p.GovernorateID).DefaultValue(1);
+    model.Field(p => p.AreaID).DefaultValue(1);
+    model.Field(p => p.UserID).DefaultValue(int.Parse(Session["UserID"].ToString()));
+
+    string currentUrlPage = HttpContext.Current.Request.Url.PathAndQuery;
+
+    string[] words = currentUrlPage.Split('=');
+    string s = "";
+    foreach (string word in words)
+    {
+        s = word.ToString();
+    }
+    int x = int.Parse(s);
+    model.Field(p => p.ProID).DefaultValue(x);
+
+
+
+})
+.Read(read => read.Action("Cases_UserRead", "Cases"))
+.Update(update => update.Action("Cases_Update", "Cases"))
+.Create(create => create.Action("Cases_Create", "Cases"))
+.Destroy(destroy => destroy.Action("Casess_Destroy", "Cases"))
+)
+    )
+
+}
+                <script>
+    function onEdit(e) {
+        //attach validator to the PopUp window
+        $("[data-role=window]").kendoValidator();
+    }
+                </script>
+
+                <script>
+      function filtermunicipality() {
+        return {
+            governorateID: $("#GovernorateID").data("kendoDropDownList").value()
+        };
+    }
+
+
+                </script>
+
+                <script type="text/javascript">
+                    function errorHandler(e) {
+                        if (e.errors) {
+                            var message = "Errors:\n";
+                            $.each(e.errors, function (key, value) {
+                                if ('errors' in value) {
+                                    $.each(value.errors, function () {
+                                        message += this + "\n";
+                                    });
+                                }
+                            });
+                            alert(message);
+                        }
+                    }
+                </script>
+
+
+
+                <script>
+        function showDetails(e) {
+            e.preventDefault();
+
+            var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+            var CaseID = dataItem.CasesID
+            var url = "/Session/SessionManagement?CaseID=" + CaseID;
+            window.location.href = url;
+
+
+
+        }
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+</div>
