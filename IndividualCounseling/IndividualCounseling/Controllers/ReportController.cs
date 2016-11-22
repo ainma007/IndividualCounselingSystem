@@ -84,6 +84,62 @@ namespace IndividualCounseling.Controllers
             CountRafahFemal();
             //
             CountPsychologicalProblemsNorthGaza();
+            CountPsychologicalProblemsGaza();
+            CountPsychologicalProblemsDair();
+            CountPsychologicalProblemsKhan();
+            CountPsychologicalProblemsRafah();
+
+            //
+
+            CountBehavioralproblemsNorthGaza();
+            CountBehavioralproblemsGaza();
+            CountBehavioralproblemsDair();
+            CountBehavioralproblemsKhan();
+            CountBehavioralproblemsRafah();
+            //
+
+            CountEducationalproblemsNorthGaza();
+            CountEducationalproblemsGaza();
+            CountEducationalproblemsDair();
+            CountEducationalproblemsKhan();
+            CountEducationalproblemsRafah();
+
+            //
+
+            CountPronounceNorthGaza();
+            CountPronounceGaza();
+            CountPronounceDair();
+            CountPronounceKhan();
+            CountPronounceRafah();
+            //
+            CountMaltreatmentNorthGaza();
+            CountMaltreatmentGaza();
+            CountMaltreatmentDair();
+            CountMaltreatmentKhan();
+            CountMaltreatmentRafah();
+
+            //
+
+            CountSexualNorthGaza();
+            CountSexualGaza();
+            CountSexualDair();
+            CountSexualKhan();
+            CountSexualRafah();
+
+            //
+            CountPsychologicalProblemsMale();
+            CountPsychologicalProblemsFemale();
+            CountBehavioralproblemsNorthMale();
+            CountBehavioralproblemsNorthFemale();
+            CountEducationalproblemsMale();
+            CountEducationalproblemsFemale();
+            CountPronounceMale();
+            CountPronounceFemale();
+            CountMaltreatmentMale();
+            CountMaltreatmentFemale();
+            CountSexualMale();
+            CountSexualFemale();
+
             return View();
         }
 
@@ -791,7 +847,7 @@ namespace IndividualCounseling.Controllers
         #endregion
 
 
-        #region(التصنيف حسب الاضطراب)
+        #region(التصنيف ضراب المشاكل النفسية)
         private int CountPsychologicalProblemsNorthGaza()
         {
 
@@ -808,7 +864,661 @@ namespace IndividualCounseling.Controllers
             return ViewBag.CountPsychologicalProblemsNorthGaza;
 
         }
-        
+
+        private int CountPsychologicalProblemsGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Psychological = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Psychological == true select new { i.CasesID }).Count();
+                int Disorder_Sleep = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Sleep == true select new { i.CasesID }).Count();
+                int Disorder_PositionsShocking = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_PositionsShocking == true select new { i.CasesID }).Count();
+
+                ViewBag.CountPsychologicalProblemsGaza = (Disorder_Psychological + Disorder_Sleep + Disorder_PositionsShocking);
+            }
+            return ViewBag.CountPsychologicalProblemsGaza;
+
+        }
+
+        private int CountPsychologicalProblemsDair()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Psychological = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Psychological == true select new { i.CasesID }).Count();
+                int Disorder_Sleep = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Sleep == true select new { i.CasesID }).Count();
+                int Disorder_PositionsShocking = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_PositionsShocking == true select new { i.CasesID }).Count();
+
+                ViewBag.CountPsychologicalProblemsDair = (Disorder_Psychological + Disorder_Sleep + Disorder_PositionsShocking);
+            }
+            return ViewBag.CountPsychologicalProblemsDair;
+
+        }
+
+        private int CountPsychologicalProblemsKhan()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Psychological = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Psychological == true select new { i.CasesID }).Count();
+                int Disorder_Sleep = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Sleep == true select new { i.CasesID }).Count();
+                int Disorder_PositionsShocking = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_PositionsShocking == true select new { i.CasesID }).Count();
+
+                ViewBag.CountPsychologicalProblemsKhan = (Disorder_Psychological + Disorder_Sleep + Disorder_PositionsShocking);
+            }
+            return ViewBag.CountPsychologicalProblemsKhan;
+
+        }
+
+        private int CountPsychologicalProblemsRafah()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Psychological = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Psychological == true select new { i.CasesID }).Count();
+                int Disorder_Sleep = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Sleep == true select new { i.CasesID }).Count();
+                int Disorder_PositionsShocking = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_PositionsShocking == true select new { i.CasesID }).Count();
+
+                ViewBag.CountPsychologicalProblemsRafah = (Disorder_Psychological + Disorder_Sleep + Disorder_PositionsShocking);
+            }
+            return ViewBag.CountPsychologicalProblemsRafah;
+
+        }
+
+
+        #endregion
+
+        #region(التصنيف ضراب المشاكل السلوكية)
+        private int CountBehavioralproblemsNorthGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Behavioural = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_Behavioural == true select new { i.CasesID }).Count();
+                int Disorder_Urination = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_Urination == true select new { i.CasesID }).Count();
+
+                ViewBag.CountBehavioralproblemsNorthGaza = (Disorder_Behavioural + Disorder_Urination);
+            }
+            return ViewBag.CountBehavioralproblemsNorthGaza;
+
+        }
+
+        private int CountBehavioralproblemsGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Behavioural = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Behavioural == true select new { i.CasesID }).Count();
+                int Disorder_Urination = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Urination == true select new { i.CasesID }).Count();
+
+                ViewBag.CountBehavioralproblemsGaza = (Disorder_Behavioural + Disorder_Urination);
+            }
+            return ViewBag.CountBehavioralproblemsGaza;
+
+        }
+
+        private int CountBehavioralproblemsDair()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Behavioural = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Behavioural == true select new { i.CasesID }).Count();
+                int Disorder_Urination = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Urination == true select new { i.CasesID }).Count();
+
+                ViewBag.CountBehavioralproblemsDair = (Disorder_Behavioural + Disorder_Urination);
+            }
+            return ViewBag.CountBehavioralproblemsDair;
+
+        }
+
+        private int CountBehavioralproblemsKhan()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Behavioural = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Behavioural == true select new { i.CasesID }).Count();
+                int Disorder_Urination = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Urination == true select new { i.CasesID }).Count();
+
+                ViewBag.CountBehavioralproblemsKhan = (Disorder_Behavioural + Disorder_Urination);
+            }
+            return ViewBag.CountBehavioralproblemsKhan;
+
+        }
+
+        private int CountBehavioralproblemsRafah()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Behavioural = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Behavioural == true select new { i.CasesID }).Count();
+                int Disorder_Urination = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Urination == true select new { i.CasesID }).Count();
+
+                ViewBag.CountBehavioralproblemsRafah = (Disorder_Behavioural + Disorder_Urination);
+            }
+            return ViewBag.CountBehavioralproblemsRafah;
+
+        }
+
+
+        #endregion
+
+        #region(التصنيف ضراب المشاكل التربوية)
+        private int CountEducationalproblemsNorthGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountEducationalproblemsNorthGaza = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_Learn == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountEducationalproblemsNorthGaza;
+
+        }
+
+        private int CountEducationalproblemsGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountEducationalproblemsGaza = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Learn == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountEducationalproblemsGaza;
+
+        }
+
+        private int CountEducationalproblemsDair()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountEducationalproblemsDair = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Learn == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountEducationalproblemsDair;
+
+        }
+
+        private int CountEducationalproblemsKhan()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountEducationalproblemsKhan = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Learn == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountEducationalproblemsKhan;
+
+        }
+
+        private int CountEducationalproblemsRafah()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountEducationalproblemsRafah = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Learn == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountEducationalproblemsRafah;
+
+        }
+
+
+        #endregion
+
+        #region(التصنيف سوء مشاكل نطق)
+        private int CountPronounceNorthGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountPronounceNorthGaza = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_Pronounce == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountPronounceNorthGaza;
+
+        }
+
+        private int CountPronounceGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountPronounceGaza = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Pronounce == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountPronounceGaza;
+
+        }
+
+        private int CountPronounceDair()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountPronounceDair = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Pronounce == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountPronounceDair;
+
+        }
+
+        private int CountPronounceKhan()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountPronounceKhan = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Pronounce == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountPronounceKhan;
+
+        }
+
+        private int CountPronounceRafah()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountPronounceRafah = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Pronounce == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountPronounceRafah;
+
+        }
+
+
+        #endregion
+
+        #region(التصنيف سوء المعاملة)
+        private int CountMaltreatmentNorthGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountMaltreatmentNorthGaza = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_Maltreatment == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountMaltreatmentNorthGaza;
+
+        }
+
+        private int CountMaltreatmentGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountMaltreatmentGaza = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Maltreatment == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountMaltreatmentGaza;
+
+        }
+
+        private int CountMaltreatmentDair()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountMaltreatmentDair = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Maltreatment == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountMaltreatmentDair;
+
+        }
+
+        private int CountMaltreatmentKhan()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountMaltreatmentKhan = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Maltreatment == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountMaltreatmentKhan;
+
+        }
+
+        private int CountMaltreatmentRafah()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                ViewBag.CountMaltreatmentRafah = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Maltreatment == true select new { i.CasesID }).Count();
+
+            }
+            return ViewBag.CountMaltreatmentRafah;
+
+        }
+
+
+        #endregion
+
+
+        #region(التصنيف  المشاكل الجنسية)
+        private int CountSexualNorthGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_SexualHarassment = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_SexualHarassment == true select new { i.CasesID }).Count();
+                int Disorder_rape = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_rape == true select new { i.CasesID }).Count();
+                int Disorder_Resuscitatesexual = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 1 && i.Disorder_Resuscitatesexual == true select new { i.CasesID }).Count();
+
+                ViewBag.CountSexualNorthGaza = (Disorder_SexualHarassment + Disorder_rape + Disorder_Resuscitatesexual);
+            }
+            return ViewBag.CountSexualNorthGaza;
+
+        }
+
+        private int CountSexualGaza()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_SexualHarassment = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_SexualHarassment == true select new { i.CasesID }).Count();
+                int Disorder_rape = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_rape == true select new { i.CasesID }).Count();
+                int Disorder_Resuscitatesexual = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 2 && i.Disorder_Resuscitatesexual == true select new { i.CasesID }).Count();
+
+                ViewBag.CountSexualGaza = (Disorder_SexualHarassment + Disorder_rape + Disorder_Resuscitatesexual);
+            }
+            return ViewBag.CountSexualGaza;
+
+        }
+
+        private int CountSexualDair()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_SexualHarassment = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_SexualHarassment == true select new { i.CasesID }).Count();
+                int Disorder_rape = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_rape == true select new { i.CasesID }).Count();
+                int Disorder_Resuscitatesexual = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 3 && i.Disorder_Resuscitatesexual == true select new { i.CasesID }).Count();
+
+                ViewBag.CountSexualDair = (Disorder_SexualHarassment + Disorder_rape + Disorder_Resuscitatesexual);
+            }
+            return ViewBag.CountSexualDair;
+
+        }
+
+        private int CountSexualKhan()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_SexualHarassment = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_SexualHarassment == true select new { i.CasesID }).Count();
+                int Disorder_rape = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_rape == true select new { i.CasesID }).Count();
+                int Disorder_Resuscitatesexual = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 4 && i.Disorder_Resuscitatesexual == true select new { i.CasesID }).Count();
+
+                ViewBag.CountSexualKhan = (Disorder_SexualHarassment + Disorder_rape + Disorder_Resuscitatesexual);
+            }
+            return ViewBag.CountSexualKhan;
+
+        }
+
+        private int CountSexualRafah()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_SexualHarassment = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_SexualHarassment == true select new { i.CasesID }).Count();
+                int Disorder_rape = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_rape == true select new { i.CasesID }).Count();
+                int Disorder_Resuscitatesexual = (from i in entities.Case_Table where i.ProjectID == H && i.GovernorateID == 5 && i.Disorder_Resuscitatesexual == true select new { i.CasesID }).Count();
+
+                ViewBag.CountSexualRafah = (Disorder_SexualHarassment + Disorder_rape + Disorder_Resuscitatesexual);
+            }
+            return ViewBag.CountSexualRafah;
+
+        }
+
+
+        #endregion
+
+        #region
+
+        private int CountPsychologicalProblemsMale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Psychological = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_Psychological == true select new { i.CasesID }).Count();
+                int Disorder_Sleep = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_Sleep == true select new { i.CasesID }).Count();
+                int Disorder_PositionsShocking = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_PositionsShocking == true select new { i.CasesID }).Count();
+
+                ViewBag.CountPsychologicalProblemsMale = (Disorder_Psychological + Disorder_Sleep + Disorder_PositionsShocking);
+            }
+            return ViewBag.CountPsychologicalProblemsMale;
+
+        }
+
+        private int CountPsychologicalProblemsFemale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Psychological = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Psychological == true select new { i.CasesID }).Count();
+                int Disorder_Sleep = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Sleep == true select new { i.CasesID }).Count();
+                int Disorder_PositionsShocking = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_PositionsShocking == true select new { i.CasesID }).Count();
+
+                ViewBag.CountPsychologicalProblemsFemale = (Disorder_Psychological + Disorder_Sleep + Disorder_PositionsShocking);
+            }
+            return ViewBag.CountPsychologicalProblemsFemale;
+
+        }
+
+        private int CountBehavioralproblemsNorthMale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Behavioural = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_Behavioural == true select new { i.CasesID }).Count();
+                int Disorder_Urination = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_Urination == true select new { i.CasesID }).Count();
+
+                ViewBag.CountBehavioralproblemsNorthMale = (Disorder_Behavioural + Disorder_Urination);
+            }
+            return ViewBag.CountBehavioralproblemsNorthMale;
+
+        }
+
+        private int CountBehavioralproblemsNorthFemale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_Behavioural = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Behavioural == true select new { i.CasesID }).Count();
+                int Disorder_Urination = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Urination == true select new { i.CasesID }).Count();
+
+                ViewBag.CountBehavioralproblemsNorthFemale = (Disorder_Behavioural + Disorder_Urination);
+            }
+            return ViewBag.CountBehavioralproblemsNorthFemale;
+
+        }
+
+        private int CountEducationalproblemsMale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountEducationalproblemsMale = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر"  && i.Disorder_Learn == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountEducationalproblemsMale;
+
+        }
+        private int CountEducationalproblemsFemale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountEducationalproblemsFemale = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Learn == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountEducationalproblemsFemale;
+
+        }
+
+
+        private int CountPronounceMale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountPronounceMale = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_Pronounce == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountPronounceMale;
+
+        }
+
+        private int CountPronounceFemale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountPronounceFemale = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Pronounce == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountPronounceFemale;
+
+        }
+
+        private int CountMaltreatmentMale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountMaltreatmentMale = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_Maltreatment == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountMaltreatmentMale;
+
+        }
+
+        private int CountMaltreatmentFemale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+
+                ViewBag.CountMaltreatmentFemale = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Maltreatment == true select new { i.CasesID }).Count();
+            }
+            return ViewBag.CountMaltreatmentFemale;
+
+        }
+
+
+        private int CountSexualMale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_SexualHarassment = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_SexualHarassment == true select new { i.CasesID }).Count();
+                int Disorder_rape = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_rape == true select new { i.CasesID }).Count();
+                int Disorder_Resuscitatesexual = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "ذكر" && i.Disorder_Resuscitatesexual == true select new { i.CasesID }).Count();
+
+                ViewBag.CountSexualMale = (Disorder_SexualHarassment + Disorder_rape + Disorder_Resuscitatesexual);
+            }
+            return ViewBag.CountSexualMale;
+
+        }
+
+        private int CountSexualFemale()
+        {
+
+            int H = 0;
+            H = int.Parse(Session["ProId"].ToString());
+            using (IndividualCounselingEntities entities = new IndividualCounselingEntities())
+            {
+                int Disorder_SexualHarassment = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_SexualHarassment == true select new { i.CasesID }).Count();
+                int Disorder_rape = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_rape == true select new { i.CasesID }).Count();
+                int Disorder_Resuscitatesexual = (from i in entities.Case_Table where i.ProjectID == H && i.CasesGender == "أنثى" && i.Disorder_Resuscitatesexual == true select new { i.CasesID }).Count();
+
+                ViewBag.CountSexualFemale = (Disorder_SexualHarassment + Disorder_rape + Disorder_Resuscitatesexual);
+            }
+            return ViewBag.CountSexualFemale;
+
+        }
+
         #endregion
     }
 }

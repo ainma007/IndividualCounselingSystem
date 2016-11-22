@@ -148,7 +148,7 @@
 
 
         .Legend(legend => legend
-            .Visible(false)
+            .Visible(true)
         )
         .ChartArea(chartArea => chartArea
 
@@ -193,10 +193,12 @@
         .Title(title => title
          .Font("bold 16px  Droid Arabic Kufi, serif")
             .Text("توزيع الحالات حسب المحافظات ")
+
             .Position(ChartTitlePosition.Top)
         )
         .Legend(legend => legend
-            .Visible(false)
+            .Visible(true)
+
         )
         .SeriesDefaults(series =>
             series.Donut().StartAngle(150)
@@ -291,10 +293,10 @@
                             <td colspan="4" class="alert alert-info"><h4 style="color:red"> مشاكل نفسية</h4></td>
 
                             <td colspan="2"><h4 style="color:green"> @ViewBag.CountPsychologicalProblemsNorthGaza</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPsychologicalProblemsGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPsychologicalProblemsDair</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPsychologicalProblemsKhan</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPsychologicalProblemsRafah</h4></td>
 
 
 
@@ -305,11 +307,11 @@
                         <tr>
                             <td colspan="4" class="alert alert-info"><h4 style="color:red">مشاكل سولكية</h4></td>
 
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountBehavioralproblemsNorthGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountBehavioralproblemsGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountBehavioralproblemsDair</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountBehavioralproblemsKhan</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountBehavioralproblemsRafah</h4></td>
 
 
                         </tr>
@@ -317,11 +319,11 @@
                         <tr>
                             <td colspan="4" class="alert alert-info"><h4 style="color:red">مشاكل تربوية</h4></td>
 
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountEducationalproblemsNorthGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountEducationalproblemsGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountEducationalproblemsDair</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountEducationalproblemsKhan</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountEducationalproblemsRafah</h4></td>
 
 
 
@@ -330,11 +332,11 @@
                         <tr>
                             <td colspan="4" class="alert alert-info"><h4 style="color:red">مشاكل نطق</h4></td>
 
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPronounceNorthGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPronounceGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPronounceDair</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPronounceKhan</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountPronounceRafah</h4></td>
 
 
 
@@ -345,11 +347,11 @@
                         <tr>
                             <td colspan="4" class="alert alert-info"><h4 style="color:red">سوء معاملة</h4></td>
 
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountMaltreatmentNorthGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountMaltreatmentGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountMaltreatmentDair</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountMaltreatmentKhan</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountMaltreatmentRafah</h4></td>
 
 
 
@@ -360,11 +362,11 @@
                         <tr>
                             <td colspan="4" class="alert alert-info"><h4 style="color:red">اساءة جنسية</h4></td>
 
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
-                            <td colspan="2"><h4 style="color:green"> 0</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountSexualNorthGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountSexualGaza</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountSexualDair</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountSexualKhan</h4></td>
+                            <td colspan="2"><h4 style="color:green"> @ViewBag.CountSexualRafah</h4></td>
 
 
 
@@ -379,7 +381,67 @@
 
 
             </div>
+
+            <div class="k-ltr" dir="ltr">
+                @(Html.Kendo().Chart()
+        .Name("chart2")
+        .Title(title => title
+         .Font("bold 16px  Droid Arabic Kufi, serif")
+            .Text(" توزيع المشاكل حسب الجنس")
+
+            )
+
+        .Legend(legend => legend
+            .Position(ChartLegendPosition.Bottom)
+
+
+        )
+        .SeriesDefaults(seriesDefaults => seriesDefaults.RadarLine().Style(ChartRadarLineStyle.Smooth))
+        .Series(series =>
+        {
+            series.RadarLine(new [] {
+                    @ViewBag.CountPsychologicalProblemsMale, @ViewBag.CountBehavioralproblemsNorthMale, @ViewBag.CountEducationalproblemsMale, @ViewBag.CountPronounceMale, @ViewBag.CountMaltreatmentMale, @ViewBag.CountSexualMale
+
+                })
+                 .Labels(labels => labels
+            .Font("bold 14px  Droid Arabic Kufi, serif")
+            )
+                .Name("ذكور");
+
+            series.RadarLine(new [] {
+                    @ViewBag.CountPsychologicalProblemsFemale, @ViewBag.CountBehavioralproblemsNorthFemale, @ViewBag.CountEducationalproblemsFemale, @ViewBag.CountPronounceFemale, @ViewBag.CountMaltreatmentFemale, @ViewBag.CountSexualFemale
+                })
+             .Labels(labels => labels
+            .Font("bold 14px  Droid Arabic Kufi, serif")
+            )
+                .Name("إناث");
+
+        })
+        .CategoryAxis(axis => axis
+            .Categories("مشاكل نفسية", "مشاكل سلوكية", "مشاكل تربوية", "مشاكل نطق",
+                        "سوء معاملة", "اساءة جنسية")
+ .Labels(labels => labels
+            .Font("bold 14px  Droid Arabic Kufi, serif")
+            )
+        )
+        .ValueAxis(axis => axis
+            .Numeric()
+            .Labels(labels => labels.Format("{0}")
+
+            )
+                        .MajorGridLines(lines => lines.Visible(true))
+
+        )
+        .Tooltip(tooltip => tooltip
+            .Visible(true)
+            .Template("#= category # (#= series.name #): #= value #")
+
+        )
+                )
+            </div>
+
         </div>
+     
     </div>
 </div>
 

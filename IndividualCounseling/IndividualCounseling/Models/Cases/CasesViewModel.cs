@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -31,9 +32,13 @@ namespace IndividualCounseling.Models.Cases
         public string CasesName { get; set; }
 
         [DisplayName("الجنس:")]
+       
         public string CasesGender { get; set; }
 
         [DisplayName("العمر:")]
+
+        [Required(ErrorMessage = "من فضلك ادخل العمر .")]
+        [Column]
         public int? CasesAge { get; set; }
 
 
@@ -267,7 +272,7 @@ namespace IndividualCounseling.Models.Cases
         [DisplayName("اغتصاب واستغلال جنسي")]
         public bool Disorder_rape { get; set; }
 
-        [DisplayName("اافاقة جنسية")]
+        [DisplayName("افاقة جنسية")]
         public bool Disorder_Resuscitatesexual { get; set; }
 
         [DisplayName("توصيات :")]

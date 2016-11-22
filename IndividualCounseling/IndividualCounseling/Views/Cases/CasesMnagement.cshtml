@@ -112,11 +112,12 @@ else
 .Columns(columns =>
 {
     columns.Bound(p => p.CasesID).Width(50).Title("رقم ").Hidden();
-    columns.Bound(p => p.CasesNumber).Width(150).HeaderHtmlAttributes(new { @title = "رقم الحالة" }).Title("رقم الحالة");
+    columns.Bound(p => p.CasesNumber).Width(150).HeaderHtmlAttributes(new { @title = "رقم الحالة" }).Title("رقم الحالة").Locked(true); ;
 
-    columns.Bound(p => p.CasesName).Width(200).HeaderHtmlAttributes(new { @title = "اسم الحالة" }).Title("اسم الحالة");
-    columns.Bound(p => p.CasesDate).Width(170).HeaderHtmlAttributes(new { @title = "التاريخ  " }).Format("{0:dd/MM/yyyy}").Title("تاريخ البداية ");
+    columns.Bound(p => p.CasesName).Width(200).HeaderHtmlAttributes(new { @title = "اسم الحالة" }).Title("اسم الحالة").Locked(true);
+    columns.Bound(p => p.CasesDate).Width(170).HeaderHtmlAttributes(new { @title = "تاريخ الحالة  " }).Format("{0:dd/MM/yyyy}").Title("تاريخ الحالة ");
     columns.Bound(p => p.CasesGender).Width(170).HeaderHtmlAttributes(new { @title = "الجنس" }).Title("الجنس");
+    columns.Bound(p => p.CasesAge).Width(170).HeaderHtmlAttributes(new { @title = "العمر" }).Title("العمر");
 
     columns.ForeignKey(p => p.GovernorateID, (System.Collections.IEnumerable)ViewData["Governorate"], "GovernorateID", "GovernorateName")
     .Title("المحافظة").Width(200);
